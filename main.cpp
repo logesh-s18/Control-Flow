@@ -23,12 +23,14 @@ int main()
 
 	cout << "\n\nYour Height " << playerHeight << " is ";
 
-	namespace LJ = sports::longJump;
+	
+	
+	namespace LJ = sports::longJump;  //namespace usuage type 1
 
 
 	//playerHeight validation
 
-	if (playerHeight <= LJ::maxHeightAllowed)
+	if (playerHeight <= LJ::maxHeightAllowed) //namespace usuage type 1
 		cout << "Valid :) \n\n";
 	else
 		cout << "Not Valid :( \n\n";
