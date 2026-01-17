@@ -36,15 +36,14 @@ int main()
 	int x{};
 
 	if (playerHeight <= maxHeightAllowed) //namespace usuage type 3
-		int x = 10; //local scope, dies when if condition ends
+		x = 10; //now, this x was from 'main's scope which will die once 'main' ends and not 'if' ends. this is redefinition alone, not a redeclaration+redef
 	else
 	{							
-		int x = 20; //local scope, dies when else condition ends
+		x = 20; //now, this x was from 'main's scope which will die once 'main' ends and not 'else' ends. this is redefinition alone, not a redeclaration+redef
 
 	}
 
-	std::cout << x; //here still the x will not be changed, bcz, x not get scoped into condition body. there was a redeclaration and redefinition happened
-					//which is to be considered as if/else body scope. new 'x' scope ends within it. 
+	std::cout << x; // now the 'x' value will be changed as the scope of 'x' value was altered (redef) inside if/else body
 
 
 }
