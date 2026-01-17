@@ -37,7 +37,7 @@ int main()
 		cout << "Valid :) \n\n";
 	else
 		cout << "Not Valid :( \n";
-		cout << "Please GET OUT -_- \n\n";
+		cout << "Please GET OUT -_- \n\n"; // this will not fall under else, ALWAYS USE BLOCKS
 
 
 
