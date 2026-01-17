@@ -33,14 +33,18 @@ int main()
 	
 	//playerHeight validation
 
+	int x{};
+
 	if (playerHeight <= maxHeightAllowed) //namespace usuage type 3
-		cout << "Valid :) \n\n";
+		int x = 10; //local scope, dies when if condition ends
 	else
 	{							
-		cout << "Not Valid :( \n";
-		cout << "Please GET OUT -_- \n\n"; 
+		int x = 20; //local scope, dies when else condition ends
 
-	} // now this blocks covers all the statements which we need for else, its available inside else's body. CORRECT USUAGE
+	}
+
+	std::cout << x; //here still the x will not be changed, bcz, x not get scoped into condition body. there was a redeclaration and redefinition happened
+					//which is to be considered as if/else body scope. new 'x' scope ends within it. 
 
 
 }

@@ -7,7 +7,8 @@ Control Flow
 
 ## New things I learned
 
-
+- always use blocks in for condition statment control flow body, bcz, if/else without block/braces only include very next single statement.
+- using { } will make include all required statements, better for readability.
 
 ------------------------------------------------------------------------------
 
@@ -25,6 +26,7 @@ Control Flow
 
 ## Important notes / rules
 
+- Best Practice : always use braces {} to create a block for the conditional cotrol flow body statements
 
 
 
