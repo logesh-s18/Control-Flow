@@ -27,6 +27,8 @@ Control Flow
 ## Important notes / rules
 
 - Best Practice : always use braces {} to create a block for the conditional cotrol flow body statements
+- I did a mistake where unknowingly redeclared variable inside another scope without understanding scope, lifetime, duration. Now im clear.
+- Be careful while Re-dec, it will cause again a new decalration which will die inside its relevant scope and the same outside variable will not be changed.
 
 
 
