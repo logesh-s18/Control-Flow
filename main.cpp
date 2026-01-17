@@ -36,9 +36,11 @@ int main()
 	if (playerHeight <= maxHeightAllowed) //namespace usuage type 3
 		cout << "Valid :) \n\n";
 	else
+	{							
 		cout << "Not Valid :( \n";
-		cout << "Please GET OUT -_- \n\n"; // this will not fall under else, ALWAYS USE BLOCKS
+		cout << "Please GET OUT -_- \n\n"; 
 
+	} // now this blocks covers all the statements which we need for else, its available inside else's body. CORRECT USUAGE
 
 
 }
