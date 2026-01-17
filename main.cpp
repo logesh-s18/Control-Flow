@@ -25,12 +25,13 @@ int main()
 
 	
 	
-	namespace LJ = sports::longJump;  //namespace usuage type 1
+	//namespace LJ = sports::longJump;  //namespace usuage type 1
 
+	using namespace sports::longJump;   //namespace usuage type 2
 
 	//playerHeight validation
 
-	if (playerHeight <= LJ::maxHeightAllowed) //namespace usuage type 1
+	if (playerHeight <= maxHeightAllowed) //namespace usuage type 2
 		cout << "Valid :) \n\n";
 	else
 		cout << "Not Valid :( \n\n";
