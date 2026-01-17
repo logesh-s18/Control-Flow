@@ -36,8 +36,8 @@ int main()
 	if (playerHeight <= maxHeightAllowed) //namespace usuage type 3
 		cout << "Valid :) \n\n";
 	else
-		cout << "Not Valid :( \n\n";
-
+		cout << "Not Valid :( \n";
+		cout << "Please GET OUT -_- \n\n";
 
 
 
