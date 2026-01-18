@@ -68,6 +68,14 @@ Control Flow
 								Commenting in the middle of a chain (before an else) causes a Compiler Error.
 
 
+								Quick Reason why distance doesn't matter: 
+
+								The compiler treats your code like a continuous stream of text. 
+								When it hits an if without braces, it looks for the very next "active" instruction. 
+								Since it deletes all comments and blank lines during the first step of compilation, 
+								a line 100 lines down looks like it's right next to the if to the compiler.
+
+
 
 ------------------------------------------------------------------------------
 
