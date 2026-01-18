@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 
-
+#define PASS
 
 
 void ifelse(bool a, bool b, bool c)
@@ -31,7 +31,7 @@ char ififwithearlyreturn(bool a, bool b, bool c)
 
 	//eventhought this all if's are independent, it will exit early as early return is declared. early return in independent if acts as if/else
 
-	if (a);
+	if (a)
 		return 'a';
 	if (b)
 		return 'b';
@@ -75,16 +75,24 @@ void takeDamageEarlyReturn(bool isAlive, int& health, bool shieldActive, int dam
 }
 
 
+
+void foo(int x, int y)
+{
+	if (x > y)
+	{
+		PASS;
+	}
+	else
+	{
+		PASS;
+	}
+}
+
+
+
 int main()
 {
-	// Shared Data
-	bool playerIsAlive{ true };
-	int playerHealth{ 100 };
-	bool playerShieldActive{ false };
-	int incomingDamage{ 40 };
-
-	// Testing Early Return (avoided arrow code)
-	takeDamageEarlyReturn(playerIsAlive, playerHealth, playerShieldActive, incomingDamage);
+	foo(4, 7);
 
 	return 0;
 

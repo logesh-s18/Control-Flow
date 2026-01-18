@@ -213,3 +213,40 @@ Types of if/else chaining usage:
 - Flattening nested if-statements
 - Null statements
 - use early return to avoid "Arrow code" i mean nested if/else
+
+
+## Tabled Checklist
+
+| No. | Concept / Problem | Technical Definition |
+| :--- | :--- | :--- |
+| **1** | **Dangling Else** | A logic error where an `else` pairs with the nearest preceding unmatched `if`. |
+| **2** | **Semicolon Snag** | Accidental `;` after `if` creates an unconditional **Null Statement**. |
+| **3** | **Arrow Code** | An anti-pattern of **Deep Nesting** that reduces code readability. |
+| **4** | **Flattening Logic** | Refactoring nested code into a **Linear Structure** using operators. |
+| **5** | **Guard Clauses** | Using **Early Returns** to handle failure cases first (Negative Validation). |
+| **6** | **Initializers** | C++17 feature to declare variables inside `if` for **Scope Management**. |
+| **7** | **Searchable Placeholders** | Using #define PASS to create intentional, searchable null statements.. |
+
+
+## Consolidated Checklist
+
+1. **The Dangling Else Ambiguity:** A logic error where an `else` statement is paired with the nearest preceding unmatched `if` statement in the same scope. 
+									This occurs regardless of indentation, potentially leading to incorrect program behavior.
+
+2. **The Semicolon Snag (Null Statements):** The accidental placement of a semicolon (`;`) immediately following an `if` condition. 
+											This creates a null statement as the body of the `if`, causing the subsequent block of code to execute unconditionally (it runs every time, regardless of the condition).
+
+3. **Arrow Code (Deep Nesting):** An anti-pattern in programming where multiple levels of nested `if` statements create a code structure that shifts further and further to the right, resembling a `>` shape.
+                                  This significantly reduces code readability and increases complexity.
+
+4. **Logic Flattening:** The process of refactoring deeply nested code into a linear, sequential structure. 
+						 This is achieved by using Logical Operators (`&&`, `||`) to combine conditions or by restructuring the logic to handle cases one after another rather than one inside another.
+
+5. **Guard Clauses (Negative Validation):** A technique used to flatten logic by checking for "failure" or "exit" conditions first. 
+											By using an Early Return to exit the function if a condition isn't met, the "success path" of the code remains at the top level (flat) rather than being nested deep inside an `else` block.
+
+6. **C++17 If-Statement Initializers:** A syntax feature that allows you to declare and initialize a variable directly within the `if` statement (e.g., `if (int x{ getVal() }; x > 0)`). 
+										This restricts the variable's scope to the `if` and its associated `else` blocks, preventing variable leaks into the rest of the function.
+
+7. Searchable Placeholders: Using #define PASS to create intentional, searchable null statements.
+
