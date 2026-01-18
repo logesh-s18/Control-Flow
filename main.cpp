@@ -5,7 +5,7 @@ using namespace std;
 
 namespace sports::longJump
 {
-	constexpr int maxHeightAllowed{ 154 };
+	constexpr int maxHeightAllowed{ 300 };
 }
 
 
@@ -35,22 +35,14 @@ int main()
 
 	int x{};
 
-	if (playerHeight <= maxHeightAllowed)
-	{
-		if (playerHeight == 111)
-		{
-			x = 7777;
-		}
-		else
-		{
-			x = 9999;
-
-		}
-	}
+	if (int pH = playerHeight; pH <= maxHeightAllowed)
+		std::cout << "\nim from if\n";
 	else
-	{
-		x = 8888;
+		std::cout << "\nelse\n";
 
-		std::cout << x;
-	}
+	
+		
+		
+std::cout << "\nnot if\n\n";
+
 }

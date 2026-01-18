@@ -19,14 +19,62 @@ Control Flow
 				|	Definition: Single statement-ku braces optional, but readability-ku braces podradhu dhaan best practice.
 				|
 
+
+
+
+
+	Basic If: Simple check.
+
+	Else: Alternative action.
+
+	If / Else If / Else Chain: Checking multiple conditions; only the first "true" block runs.
+
+	Null Statement: Semicolon error (;).
+
+	Block Statements: Using { } for multiple lines.
+
+	Implicit Blocks: Invisible { } for single lines.
+
+	Nested If: if inside an if (Dangling else problem).
+
+	Variable Scope: Variables inside { } die when the block ends.
+
+	Redeclaration: Cannot define the same name twice in one scope.
+
+	Assignment: Updating an existing variable's value using =.
+
+	Compile-time: The planning/building stage (where comments/whitespace are ignored).
+
+	Runtime: The execution/action stage.
+
+	Variable Shadowing: Inner variable hiding an outer one.
+
+	Initializers in If: Defining a variable inside if (C++17).
+
+	Indentation: Visual hierarchy (ignored by compiler).
+
+	Early Returns: Exiting early to avoid nesting and keep code flat.
+
+	Unreachable Code: Code after a return statement that never runs.
+
+	Arrow Code: Bad practice (>) shape caused by deep nesting.
+
+	Braces Safety: Always using { } even for single lines to prevent bugs.
+
+	Indentation Trap: Code that looks conditional due to spacing but always executes.
+
+	Comment-out & Stealing Bug: In a condition without braces, commenting out the body at the end of a chain (or standalone if) steals the 
+								next outer statement—regardless of distance or blank lines.
+								Commenting in the middle of a chain (before an else) causes a Compiler Error.
+
+
+
 ------------------------------------------------------------------------------
 
 ## Examples / Code I tried
 
 [C++]
 
-	if (hungry)
-	eat(); // Internally treated as { eat(); }
 
 ------------------------------------------------------------------------------
 
