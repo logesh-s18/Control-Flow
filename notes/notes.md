@@ -74,6 +74,13 @@ Control Flow
 								When it hits an if without braces, it looks for the very next "active" instruction. 
 								Since it deletes all comments and blank lines during the first step of compilation, 
 								a line 100 lines down looks like it's right next to the if to the compiler.
+								
+	Single-Line Conditional Method: Placing the statement on the same line (e.g., if (x) doY();). 
+									
+									Pros: 
+									Prevents the Comment-out Bug (commenting the line removes the whole if) and keeps code compact. 
+									Cons: 
+									Harder to debug because the conditional and statement execute as one step, and you cannot place a breakpoint on just the action.
 
 
 - (will see later this advanced concept)
@@ -81,6 +88,8 @@ Control Flow
 	Member Pointer Jump Table (.* and ->*): An alternative to if/else chains for class object decision-making where an array stores member function addresses; 
 											this allows the program to "jump" directly to the correct logic at runtime using these operators, providing a faster 
 											and more organized data structure for complex life cycles.
+
+
 
 
 
