@@ -76,6 +76,13 @@ Control Flow
 								a line 100 lines down looks like it's right next to the if to the compiler.
 
 
+- (will see later this advanced concept)
+
+	Member Pointer Jump Table (.* and ->*): An alternative to if/else chains for class object decision-making where an array stores member function addresses; 
+											this allows the program to "jump" directly to the correct logic at runtime using these operators, providing a faster 
+											and more organized data structure for complex life cycles.
+
+
 
 ------------------------------------------------------------------------------
 
