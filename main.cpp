@@ -27,11 +27,11 @@ void ifelse(bool a, bool b, bool c)
 char ififwithearlyreturn(bool a, bool b, bool c)
 {
 
-	std::cout << "ifwithreturn starts...\n";
+	std::cout << "ififwithearlyreturn starts...\n";
 
 	//eventhought this all if's are independent, it will exit early as early return is declared. early return in independent if acts as if/else
 
-	if (a)
+	if (a);
 		return 'a';
 	if (b)
 		return 'b';
@@ -39,7 +39,7 @@ char ififwithearlyreturn(bool a, bool b, bool c)
 		return 'c';
 
 
-	std::cout << "ifwithreturn ends...\n";
+	std::cout << "ififwithearlyreturn ends...\n";
 
 }
 
@@ -67,7 +67,7 @@ int main()
 {
 	ifelse(true,true,false);
 	ifif(true,true,false);
-	ififwithearlyreturn(true,true,false);
+	std::cout << ififwithearlyreturn(false,true,false);
 
 	return 0;
 
