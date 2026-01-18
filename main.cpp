@@ -35,14 +35,27 @@ int main()
 
 	int x{};
 
-	if (int pH = playerHeight; pH <= maxHeightAllowed)
-		std::cout << "\nim from if\n";
+	if (int pH  = playerHeight; pH <= maxHeightAllowed)
+	{
+		if (pH == 111)
+		{
+			pH = 11111;
+			std::cout << pH;
+		}
+		else if (pH == 222)
+		{
+			pH = 22222;
+			std::cout << pH;
+		}
+		else
+			std::cout << "not specified!";
+	}
 	else
-		std::cout << "\nelse\n";
+	{
+		pH = 9999;
 
-	
-		
-		
-std::cout << "\nnot if\n\n";
+		std::cout << pH;
+		std::cout << "\nUndefined Behavior!";
+	}
 
 }
