@@ -36,12 +36,14 @@ int main()
 	int x{};
 
 	if (playerHeight <= maxHeightAllowed)
-	{
 		if (playerHeight == 111)
 			x = 7777;
-	}
-	else 
-		x = 9999;
+
+		else //dangling else. this is a pair of innermost if condition and not with outer. specify clearly with braces '{ }' if u need to mention it for outer
+			x = 9999;
+
+	else
+		x = 8888;
 
 		std::cout << x;
 }
