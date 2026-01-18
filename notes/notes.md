@@ -212,3 +212,4 @@ Types of if/else chaining usage:
 - Nested if-statements and the dangling else problem
 - Flattening nested if-statements
 - Null statements
+- use early return to avoid "Arrow code" i mean nested if/else

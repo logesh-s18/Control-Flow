@@ -62,19 +62,17 @@ void ifif(bool a, bool b, bool c)
 }
 
 
-// 1. Before: The "Arrow Code" Method (Deep Nesting)
-void takeDamageNested(bool isAlive, int& health, bool shieldActive, int damage) 
+//  After: The "Early Return" Method (Flat Logic)
+void takeDamageEarlyReturn(bool isAlive, int& health, bool shieldActive, int damage)
 {
-	if (isAlive) {
-		if (health > 0) {
-			if (!shieldActive) {
-				health -= damage;
-				std::cout << "Nested Logic: Damage Taken! Health: " << health << "\n";
-			}
-		}
-	}
-}
+	// Gatekeeper: Check restrictions/failure cases first (Negative First)
+	if (!isAlive || health <= 0) return;
+	if (shieldActive) return;
 
+	// Main Logic: Flat and clean
+	health -= damage;
+	std::cout << "Early Return Logic: Damage Taken! Health: " << health << "\n";
+}
 
 
 int main()
@@ -85,9 +83,8 @@ int main()
 	bool playerShieldActive{ false };
 	int incomingDamage{ 40 };
 
-	// Testing Nested
-	takeDamageNested(playerIsAlive, playerHealth, playerShieldActive, incomingDamage);
-
+	// Testing Early Return (avoided arrow code)
+	takeDamageEarlyReturn(playerIsAlive, playerHealth, playerShieldActive, incomingDamage);
 
 	return 0;
 
