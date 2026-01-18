@@ -3,43 +3,72 @@ using namespace std;
 
 
 
-namespace sports::longJump
+
+void ifelse(bool a, bool b, bool c)
 {
-	constexpr int maxHeightAllowed{ 300 };
+
+	std::cout << "ifelse starts...\n";
+
+	//this all if's with else are paired with eachother. one true condition is enough and others will be ignored.
+
+	if (a)
+		std::cout << "a\n";
+	else if (b)
+		std::cout << "b\n";
+	else if (c)
+		std::cout << "c\n";
+
+
+	std::cout << "ifelse ends...\n";
+
 }
+
+
+char ififwithreturn(bool a, bool b, bool c)
+{
+
+	std::cout << "ifwithreturn starts...\n";
+
+	//eventhought this all if's are independent, it will exit early as early return is declared. early return in independent if acts as if/else
+
+	if (a)
+		return 'a';
+	if (b)
+		return 'b';
+	if (c)
+		return 'c';
+
+
+	std::cout << "ifwithreturn ends...\n";
+
+}
+
+
+void ifif(bool a, bool b, bool c)
+{
+	std::cout << "ifif starts...\n";
+
+	//this all if's are independently checked
+
+	if (a)
+		std::cout << "a\n";
+	if (b)
+		std::cout << "b\n";
+	if (c)
+		std::cout << "c\n";
+
+	std::cout << "ifif ends...\n";
+
+}
+
 
 
 int main()
 {
+	ifelse(true,true,false);
+	ifif(true,true,false);
+	ififwithreturn(true,true,false);
 
-
-	cout << "Hi there, welcome to Miami Atheloo Day!!!\n\n"
-
-		"Please enter your height here (in cm) : ";
-
-	int playerHeight;
-
-	cin >> playerHeight;
-
-	cout << "\n\nYour Height " << playerHeight << " is ";
-
-
-
-	namespace spLngJmp = sports::longJump;  //namespace usuage type 3
-
-	using namespace spLngJmp;   //namespace usuage type 3
-
-
-
-	//playerHeight validation
-
-	int x{};
-
-
-	//hard to debug
-	if (int pH  = playerHeight; pH <= maxHeightAllowed) pH = 11111;
-	else pH = 9999;
-
-
+	return 0;
 
 }

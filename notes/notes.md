@@ -83,6 +83,70 @@ Control Flow
 									Harder to debug because the conditional and statement execute as one step, and you cannot place a breakpoint on just the action.
 
 
+
+
+Types of if/else chaining usage:
+
+1. If-Else (Exclusive Choice)
+2. If-If (Multiple Checks)
+3. If-If with Return (Early Exit)
+
+
+
+	1. If-Else (Exclusive Choice)
+	   
+	   * It executes the code only after the first true condition it finds.
+
+	   
+	   * An else if statement only evaluates if the previous if statement was false.
+
+	   
+	   * Once it finds a true condition, it skips all remaining else blocks.
+
+	   
+	   * These statements are dependent on each other.
+
+
+	2. If-If (Multiple Checks)
+	   
+	   * It executes the code after all true conditions.
+
+	   
+	   * Every single if statement in the list is evaluated by the computer.
+
+	   
+	   * One if statement being true does not stop the next one from checking.
+
+	   
+	   * These statements are independent of each other.
+
+
+	3. If-If with Return (Early Exit)
+	   
+	   * A return statement causes a function to exit immediately.
+
+	   
+	   * If an if block contains a return, the function finishes as soon as that condition is true.
+
+	   
+	   * Because the function exits, any if statements following it never get a chance to run.
+
+	   
+	   * This makes independent if statements behave exactly like if-else.
+
+
+	4. Dependency and Best Practices
+	   
+	   * When every branch returns a value, the else keyword provides no extra value.
+
+	   
+	   * Using if-if with returns avoids "clutter" in your code.
+
+	   
+	   * It allows your conditions to line up better, making the code easier to read.
+
+
+
 - (will see later this advanced concept)
 
 	Member Pointer Jump Table (.* and ->*): An alternative to if/else chains for class object decision-making where an array stores member function addresses; 
@@ -123,6 +187,10 @@ Control Flow
 ---------------------------------------------------------------------------------
 
 ## Quick summary (in my own words)
+
+
+### Project Logic Overview
+![my C++](./images/C++.jpg)
 
 
 
