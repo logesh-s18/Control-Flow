@@ -24,7 +24,7 @@ void ifelse(bool a, bool b, bool c)
 }
 
 
-char ififwithreturn(bool a, bool b, bool c)
+char ififwithearlyreturn(bool a, bool b, bool c)
 {
 
 	std::cout << "ifwithreturn starts...\n";
@@ -67,7 +67,7 @@ int main()
 {
 	ifelse(true,true,false);
 	ifif(true,true,false);
-	ififwithreturn(true,true,false);
+	ififwithearlyreturn(true,true,false);
 
 	return 0;
 
