@@ -11,11 +11,22 @@ Control Flow
 - using { } will make include all required statements, better for readability.
 - dont accidently put ';' beside conditions, it will assume as null statement and will always execute next line.
 
+
+- Implicit Blocks
+
+				|	Idea: Neenga curly braces podala na kuda, C++ compiler internal-a oru "invisible block" create pannikum for that single line.
+				|
+				|	Definition: Single statement-ku braces optional, but readability-ku braces podradhu dhaan best practice.
+				|
+
 ------------------------------------------------------------------------------
 
 ## Examples / Code I tried
 
+[C++]
 
+	if (hungry)
+	eat(); // Internally treated as { eat(); }
 
 ------------------------------------------------------------------------------
 

@@ -35,9 +35,12 @@ int main()
 
 	int x{};
 
-	if (playerHeight <= maxHeightAllowed); // Indha semicolon dhaan villian!
-		x = 10; // Idhu eppovume print aagum.
+	if (playerHeight <= maxHeightAllowed)
+		if (playerHeight == 111)
+			x = 7777;
 
+	else //dangling else. this is a pair of innermost if condition and not with outer. specify clearly with braces '{ }' if u need to mention it for outer
+		x = 9999;
 
 		std::cout << x;
 }
