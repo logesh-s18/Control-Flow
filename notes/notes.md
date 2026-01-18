@@ -190,7 +190,7 @@ Types of if/else chaining usage:
 
 
 ### Project Logic Overview
-![my C++](../images/cpp.jpg)
+<img src="../images/cpp.jpg" width="200" />.
 
 
 
