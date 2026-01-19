@@ -250,3 +250,6 @@ Types of if/else chaining usage:
 
 7. Searchable Placeholders: Using #define PASS to create intentional, searchable null statements.
 
+
+8.to be aware wth Operator== vs Operator= inside the conditional 
+
