@@ -92,8 +92,15 @@ void foo(int x, int y)
 
 int main()
 {
-	foo(4, 7);
 
-	return 0;
+	//to be aware wth Operator== vs Operator= inside the conditional 
+
+	std::cout << "Enter 0 or 1: ";
+	int x{};
+	std::cin >> x;
+	if (x = 0) // oops, we used an assignment here instead of a test for equality
+		std::cout << "You entered 0\n";
+	else
+		std::cout << "You entered 1\n";
 
 }
