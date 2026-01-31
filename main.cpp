@@ -95,7 +95,9 @@ int giveanum()
 
 int main()
 {
-	if constexpr (const int k = 2; k)  // if constexpr expects constant value
+	constexpr bool trueva = true;
+
+	if (trueva)  // constexpr var and non-constant if statement will be treated as constexpr if statement as it have constand value and will be compile time
 	{
 		if (bool isTrue = false; isTrue)
 		{
