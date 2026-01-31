@@ -267,4 +267,71 @@ Types of if/else chaining usage:
 																			 |
 ------------------------------------------------------------------------------
 
+### Project Logic Overview
+
+
+
 ## New things I learned
+
+* maybe if constexpr looks useless for a logic, but we can use it to discard the temp block logic and use it in future just by changing it to non-constant if statement
+  as looking it as a reference. 
+  
+  for eg: temporarily we are disabling the logic instead of removing the logic from code. in future, if we need, we can enable
+
+
+* constexpr if statement looks always for constant value whether the var got initialized from outside or inside if conditional.
+
+* as we using if constexpr, the compiler will not generate machine code for the discarded branch
+
+
+
+~~~~~~~~~~~~~~~~~~~~~~~~~
+----- * CHECKLIST * -----
+~~~~~~~~~~~~~~~~~~~~~~~~~
+
+
+Compile-time Evaluation: 
+The condition must be a constant expression (literals or constexpr variables) known when the code is built.
+
+
+
+Discarded Statement: 
+The branch not taken is "pruned." The compiler generates zero machine code for it, making the .exe smaller.
+
+
+
+Zero Runtime Cost: 
+No "if-check" happens while the program is running; the decision is already baked into the binary.
+
+
+
+Syntactic Validity: 
+Even discarded code must have correct C++ syntax. The compiler still "reads" it even if it doesn't "translate" it.
+
+
+
+Template Non-instantiation: 
+In templates, it allows code that would be "illegal" for certain types to exist without causing a crash.
+
+
+
+C++17 Requirement: 
+This is a modern standard feature and won't work on older C++11/14 setups.
+
+
+
+Future-Proof Maintenance (User's Point! 💡): 
+The discarded block stays in your source code as a dormant reference. You can easily "activate" it later by changing the constexpr value without rewriting logic.
+
+
+
+if constexpr vs #if (The Safety Rule):
+
+#if is a Preprocessor Macro (dumb text-cutter; doesn't check for errors).
+
+if constexpr is a Compiler Feature (smart; respects scopes and checks for syntax errors). Unlike #if, if constexpr respects C++ scoping rules {}.
+
+
+
+Preprocessor Masking: 
+The ability of #if to completely hide code blocks from the compiler as if they never existed.
