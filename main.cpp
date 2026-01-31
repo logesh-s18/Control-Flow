@@ -88,17 +88,28 @@ void foo(int x, int y)
 	}
 }
 
-
+int giveanum()
+{
+	return 1;
+}
 
 int main()
 {
-	if (bool isTrue = false; isTrue)
+	if constexpr (int k = giveanum(); k)
+	{
+		if (bool isTrue = false; isTrue)
+		{
+
+			for (int i = 0; i < 10; i++)
+			{
+				std::cout << "Hi\n";
+
+			}
+		}
+	}
+	else
 	{
 
-		for (int i = 0; i < 10; i++)
-		{
-			std::cout << "Hi\n";
-
-		}
+		std::cout << "Nothing here get the fuck out\n";
 	}
 }
