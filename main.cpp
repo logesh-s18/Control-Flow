@@ -95,7 +95,7 @@ int giveanum()
 
 int main()
 {
-	if (int k = giveanum(); k)
+	if constexpr (const int k = 2; k)  // if constexpr expects constant value
 	{
 		if (bool isTrue = false; isTrue)
 		{
