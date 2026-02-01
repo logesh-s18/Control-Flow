@@ -21,7 +21,7 @@ void printDigitName(int x)
         break;
     case 5:
         std::cout << "Three";
-        /*[[fallthrough]];*/
+        [[fallthrough]];        // using this attribute, we say this fallthrough is intentional so other devs could acknowledge
     case '7': 
         std::cout << "Three";
         break;
