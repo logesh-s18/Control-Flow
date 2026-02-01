@@ -369,7 +369,8 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * 'return' in switch exits whole function, whereas 'break' in switch exits its current switch block but not exits from whole function.
 * A break statement (declared using the break keyword) tells the compiler that we are done executing statements within the switch, and that execution should continue with the statement
   after the end of the switch block. This allows us to exit a switch-statement without exiting the entire function.
-* 
+*  switch labels with indentation makes code complex in readability. Prefer not to indent labels. 
+* Prefer a switch-statement over if-else statements when testing a single expression (with a non-boolean integral type or an enumerated type) for equality against a small set of values.
 
 
 

@@ -11,28 +11,28 @@ void printDigitName(int x)
 
     
     case 1:
-    std::cout << "One";
-    break;
+        std::cout << "One";
+        break;
     case 2: 
-    std::cout << "Two"; 
-    break; 
+        std::cout << "Two"; 
+        break; 
     case 3:
-    std::cout << "Three";
-    break;
+        std::cout << "Three";
+        break;
     case 5:
-    std::cout << "Three";
+        std::cout << "Three";
         break;
     case '7': 
-    std::cout << "Three";
-    break;
+        std::cout << "Three";
+        break;
 
     default: 
-    std::cout << "Unknown";
+        std::cout << "Unknown";
         break;
 
     }
 
-    std::cout << "\nHeloooo\n\n"; 
+    std::cout << "Heloooo\n\n"; 
         
 }
 
