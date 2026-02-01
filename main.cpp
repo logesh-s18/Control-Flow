@@ -36,10 +36,10 @@ void printDigitName(int x)
     case 3:
         std::cout << "Three";
         return;
-    case 54:
+    case 5:
         std::cout << "Three";
         return;
-    case '6': // error: '6' converts to integer value 54, which is already used
+    case '7': // case labe is 55 as '7' char ascii value
         std::cout << "Three";
         return;
     default:
