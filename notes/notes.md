@@ -365,6 +365,8 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * Always prefer default label to use in bottom of the switch block.
 * If the value of the conditional expression does not match any of the case labels, and no default case has been provided, then no cases inside the switch are executed. Execution continues after the end of the switch block
 * if there is no matching expr based on the switchs () and no default label, then the switch statement was skipped and the next line will be executed.
+* beware while using 'return' and 'break' in switch labels. 
+* 'return' in switch exits whole function, whereas 'break' in switch exits its current switch block but not exits from whole function.
 
 
 
