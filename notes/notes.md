@@ -361,3 +361,13 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * switch's parantheses value should always be integral value
 * case labels cannot be duplicated.
 * char in case label stores the ascii value of given char
+* placing default in top before the case labels wont affect the logic, bcz, switch executes as per the jumping strategy to the exact known case. 
+* Always prefer default label to use in bottom of the switch block.
+* If the value of the conditional expression does not match any of the case labels, and no default case has been provided, then no cases inside the switch are executed. Execution continues after the end of the switch block
+* 
+
+
+
+
+
+
