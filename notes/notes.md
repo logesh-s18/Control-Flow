@@ -333,5 +333,28 @@ if constexpr is a Compiler Feature (smart; respects scopes and checks for syntax
 
 
 
-Preprocessor Masking: 
+Preprocessor Masking ("the Dumb shredder): 
 The ability of #if to completely hide code blocks from the compiler as if they never existed.
+Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does not understand C++ code; it only understands text.
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------
+																			 |
+### 8.5 — Switch statement basics   									     |
+																			 |
+------------------------------------------------------------------------------
+
+### Project Logic Overview
+
+
+
+## New things I learned
+
+
+* switch statement case labels are a continguous execution action as per the start of its conditional equality value. if there isn't any break, the cases will be executed continously
