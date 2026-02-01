@@ -367,7 +367,9 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * if there is no matching expr based on the switchs () and no default label, then the switch statement was skipped and the next line will be executed.
 * beware while using 'return' and 'break' in switch labels. 
 * 'return' in switch exits whole function, whereas 'break' in switch exits its current switch block but not exits from whole function.
-
+* A break statement (declared using the break keyword) tells the compiler that we are done executing statements within the switch, and that execution should continue with the statement
+  after the end of the switch block. This allows us to exit a switch-statement without exiting the entire function.
+* 
 
 
 
