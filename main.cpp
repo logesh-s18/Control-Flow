@@ -28,9 +28,7 @@ void printDigitName(int x)
     switch (x) // x is evaluated to produce value 2
     {
 
-    default: //placing default in top before the case labels wont affect the logic, bcz, switch executes as per the jumping strategy to the exact known case 
-        std::cout << "Unknown";
-        return;
+    
     case 1:
         std::cout << "One";
         return;
@@ -46,6 +44,10 @@ void printDigitName(int x)
     case '7': // case labe is 55 as '7' char ascii value
         std::cout << "Three";
         return;
+
+    //default: 
+    //    std::cout << "Unknown";
+    //    return;
 
     }
 

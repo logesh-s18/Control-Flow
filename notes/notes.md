@@ -364,7 +364,7 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * placing default in top before the case labels wont affect the logic, bcz, switch executes as per the jumping strategy to the exact known case. 
 * Always prefer default label to use in bottom of the switch block.
 * If the value of the conditional expression does not match any of the case labels, and no default case has been provided, then no cases inside the switch are executed. Execution continues after the end of the switch block
-* 
+* if there is no matching expr based on the switchs () and no default label, then the switch statement was skipped and the next line will be executed.
 
 
 
