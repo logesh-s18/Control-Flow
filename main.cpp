@@ -51,7 +51,7 @@ void printDigitName(int x)
 
     }
 
-    std::cout << "Heloooo\n\n";
+    std::cout << "Heloooo\n\n"; // this will not be executed as case label has 'return' with them which makes exit full function once the case statement got executed
         
 }
 
@@ -62,7 +62,7 @@ void printDigitName(int x)
 int main()
 {
 
-	printDigitName(10);
+	printDigitName(1);
 	std::cout << '\n';
 
 	return 0;
