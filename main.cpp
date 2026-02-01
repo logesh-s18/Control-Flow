@@ -1,6 +1,6 @@
 
 #include <iostream>
-using namespace std;
+//using namespace std;
 
 
 
@@ -21,7 +21,7 @@ void printDigitName(int x)
         break;
     case 5:
         std::cout << "Three";
-        break;
+        /*[[fallthrough]];*/
     case '7': 
         std::cout << "Three";
         break;
