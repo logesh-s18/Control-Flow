@@ -358,3 +358,5 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 
 
 * switch statement case labels are a continguous execution action as per the start of its conditional equality value. if there isn't any break, the cases will be executed continously
+* switch's parantheses value should always be integral value
+* case labels cannot be duplicated

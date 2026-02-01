@@ -23,30 +23,41 @@ using namespace std;
 
 
 
+void printDigitName(int x)
+{
+    switch (x) // x is evaluated to produce value 2
+    {
+    case 1:
+        std::cout << "One";
+        return;
+    case 2: // which matches the case statement here
+        std::cout << "Two"; // so execution starts here
+        return; // and then we return to the caller
+    case 3:
+        std::cout << "Three";
+        return;
+    case 54:
+        std::cout << "Three";
+        return;
+    case '6': // error: '6' converts to integer value 54, which is already used
+        std::cout << "Three";
+        return;
+    default:
+        std::cout << "Unknown";
+        return;
+    }
+}
+
+
+
+//--------------------- main ------------------
+
 int main()
 {
 
-	int age = 22;
+	printDigitName(2);
+	std::cout << '\n';
 
-	switch (age)
-	{
-
-	case 1:
-		std::cout << "age is 1\n\n";
-		break;
-
-	case 21:
-		std::cout << "age is 21\n\n";
-		break;
-
-	case 22:
-		std::cout << "age is 22\n\n";
-		//break;
-	
-	default :
-		std::cout << "nothing is there\n\n";
-	}
-
-
+	return 0;
 
 }
