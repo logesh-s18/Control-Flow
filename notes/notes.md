@@ -392,3 +392,4 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 
 ## New things I learned
 
+* we can use [[fallthrough]] attribute (C++ 17 feature) and we say this fallthrough is intentional so other devs could acknowledge
