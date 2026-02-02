@@ -36,7 +36,6 @@ previous:
 skip: 
     std::cout << "Jump aagi skip vandhachu!\n\n";
     goto previous;// label
-    
         
 }
 
