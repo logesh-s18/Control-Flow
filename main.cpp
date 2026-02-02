@@ -7,17 +7,18 @@
 void printDigitName(int x)
 {
     const int num = 7;
+
     switch (x)
     {
         int a; // okay: definition is allowed before the case labels
 
     case 1:
         int y; // okay but bad practice: definition is allowed within a case
-        y = 4; // okay: assignment is allowed
+        y = 1; // okay: assignment is allowed
         break;
-
     case 2:
-        y = 5; // okay: y was declared above, so we can use it here too
+        int y;
+        y = 4; // okay: y was declared above, so we can use it here too
         break;
 
     case 3:
