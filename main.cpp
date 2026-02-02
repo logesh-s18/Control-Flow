@@ -6,33 +6,27 @@
 
 void printDigitName(int x)
 {
-    switch (x) 
+    const int num = 7;
+    switch (x)
     {
+        int a; // okay: definition is allowed before the case labels
 
-    
     case 1:
-        std::cout << "One";
-        break;
-    case 2: 
-        std::cout << "Two"; 
-        break; 
-    case 3:
-        std::cout << "Three";
-        break;
-    case 5:
-        std::cout << "Three";
-        [[fallthrough]];        // using this attribute, we say this fallthrough is intentional so other devs could acknowledge
-    case '7': 
-        std::cout << "Three";
+        int y; // okay but bad practice: definition is allowed within a case
+        y = 4; // okay: assignment is allowed
         break;
 
-    default: 
-        std::cout << "Unknown";
+    case 2:
+        y = 5; // okay: y was declared above, so we can use it here too
+        break;
+
+    case 3:
+        break;
+    
+    case num: // variable should be compile time integral
         break;
 
     }
-
-    std::cout << "Heloooo\n\n"; 
         
 }
 
@@ -43,7 +37,7 @@ void printDigitName(int x)
 int main()
 {
 
-	printDigitName(1);
+	printDigitName(2);
 	std::cout << '\n';
 
 	return 0;
