@@ -394,3 +394,4 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 
 * we can use [[fallthrough]] attribute (C++ 17 feature) and we say this fallthrough is intentional so other devs could acknowledge
 * everything inside switch {} falls under switch's scope. if specific scope needed inside, use {} block scope
+* Sequential Case Labels (Stacking) is not considered as fallthrough
