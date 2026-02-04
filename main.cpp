@@ -61,7 +61,15 @@ int main()
 	std::cout << "Enter the operation symbol : ";
 
 	char opSymbol;
-
+	; //  these are known as explicit NULL statements
+	;
+	;
+	;
+	;
+	;
+	;
+	;
+	;
 	std::cin >> opSymbol;
 
 	//do the operation
