@@ -464,3 +464,7 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * if a goto with label name defined, then its label should be declared somewhere.
 * Labels must attach to a statements. if the label is in end, then a ';' is required.
 * goto defining names are called statement labels.
+* Only because of the function scope, goto can do backward/forward jumps
+* backward jump cause loop
+* forward jump skips the code
+* using goto is not recommended. 
