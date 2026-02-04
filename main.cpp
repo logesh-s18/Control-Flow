@@ -12,7 +12,9 @@ void calculate(int a, int b, char x)
 		return; // this is ignored as this not fall under switch's scope as it's been before the very 1st case label
 		break; // this is ignored as this not fall under switch's scope as it's been before the very 1st case label
 
-		int cv; // definition allowed
+		int cv; // definition allowed, determined when switch's scope starts
+
+		cv = 100; // dead code (unreachable)
 
 		//int cv = 28; this initialization not allowed
 

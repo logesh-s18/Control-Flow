@@ -421,6 +421,23 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 • [[fallthrough]] Meta data for the code
 
 
+• [x] Unreachable Code: Statements before the first case (like return or break) are skipped.
+• [x] Definitions: int cv; is allowed but uninitialized.
+• [x] Initializations: int cv = 28; is illegal because the code is skipped.
+• [x] Assignments: cv = 8; inside a case is valid and necessary to give the variable a value.
+• [x] After definition before a 1st case label, assigning in next line will be considered as "Dead code" (Unreachable). 
+		eg: 
+		switch()
+		{
+
+		int cv; 
+		cv = 100; //dead code
+
+		case 1:
+
+		}
+
+
 
 
 
