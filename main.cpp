@@ -6,8 +6,10 @@
 
 void calculate(int a, int b, char x)
 {
+
 	switch (x)
 	{
+
 
 		return; // this is ignored as this not fall under switch's scope as it's been before the very 1st case label
 		break; // this is ignored as this not fall under switch's scope as it's been before the very 1st case label
@@ -43,6 +45,10 @@ void calculate(int a, int b, char x)
 		std::cout << "\nOperation symbol not valid !\n";
 
 	}
+	goto end;
+
+
+end:; //Labels must attach to a statements. if the label is in end, then a ';' is required.
 
 }
 
@@ -50,11 +56,16 @@ int getUserInput()
 {
 	int x;
 
-	std::cout << "Please enter a digit : ";
 
+
+	std::cout << "Please enter a digit : ";
 	std::cin >> x;
 
+
+
 	return x;
+
+
 
 }
 
@@ -66,12 +77,12 @@ int main()
 	int a{ getUserInput() };
 	int b{ getUserInput() };
 
-	
+
 	// select the operator
 	std::cout << "Enter the operation symbol : ";
 
 	char opSymbol;
-	
+
 	std::cin >> opSymbol;
 
 	//do the operation
