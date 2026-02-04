@@ -9,7 +9,15 @@ void calculate(int a, int b, char x)
 	switch (x)
 	{
 
+		return; // this is ignored as this not fall under switch's scope as it's been before the very 1st case label
+		break; // this is ignored as this not fall under switch's scope as it's been before the very 1st case label
+
+		int cv; // definition allowed
+
+		//int cv = 28; this initialization not allowed
+
 	case '+':
+		cv = 8;
 		std::cout << a + b;
 		break;
 
@@ -61,15 +69,7 @@ int main()
 	std::cout << "Enter the operation symbol : ";
 
 	char opSymbol;
-	; //  these are known as explicit NULL statements
-	;
-	;
-	;
-	;
-	;
-	;
-	;
-	;
+	
 	std::cin >> opSymbol;
 
 	//do the operation

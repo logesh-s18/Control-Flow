@@ -403,6 +403,25 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * Variable declaration and initialization inside case statements generally not allowed apart from last case label in switch.
 
 
+## Checklist:
+
+• Beware of variable initialization and undefined behavior
+• Initialization not allowed apart from last case or before first case
+• Intentional fallthrough requires [[fallthrough]] attribute (C++17 feature)
+• Stacking case labels does not mean fallthrough
+• Stacking labels utilizes shared logic
+• Case labels do not define a new scope (no implicit blocks)
+• Use explicit blocks { } to create scope for variable initialization
+• Attributes are metadata, not statements
+• [[fallthrough]] requires a trailing semicolon (modifies a null statement)
+• Statements placed before the first case label are unreachable
+• Uninitialized variable definitions are allowed across cases but are bad practice
+• Switch termination conditions (break, return, or end of block)
+• "operator" is a reserved keyword and cannot be a variable name
+• [[fallthrough]] Meta data for the code
+
+
+
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
