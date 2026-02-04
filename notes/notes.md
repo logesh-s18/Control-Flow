@@ -396,6 +396,11 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * everything inside switch {} falls under switch's scope. if specific scope needed inside, use {} block scope
 * Sequential Case Labels (Stacking) is not considered as fallthrough
 * if the fallthrough is intentional, use use [[fallthrough]] attribute 
+* variable intialization will work only for last case label whether it is a 'case' or 'default'. Initialization of variables is disallowed in any case that is not the last case 
+* Initialization is also disallowed before the first case, as those statements will never be executed, as there is no way for the switch to reach them.
+* Remember! labels do not create a separate scope, everything inside "switch" falls under "switch" scope.
+* You can initialize the varibale in middle or anywhere than last case .. only if you create a {} block scope.
+* Variable declaration and initialization inside case statements generally not allowed apart from last case label in switch.
 
 
 
@@ -419,3 +424,4 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 ## New things I learned
 
 * goto has never ending looping risk
+* goto is function scope

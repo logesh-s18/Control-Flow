@@ -4,41 +4,68 @@
 
 
 
-void printDigitName(char x)
+void calculate(int a, int b, char x)
 {
-
 	switch (x)
 	{
-	//intentional fallthrough
-	case 'a':
-	case 'e':
-	case 'i':
-	case 'o':
-	case 'u':
-	case 'A':
-	case 'E':
-	case 'I':
-	case 'O':
-	case 'U':
-		std::cout << "Its an vowel\n";
-		break;
-	
-	default:
-		std::cout << "Its NOT an vowel\n";
-   }
 
-        
+	case '+':
+		std::cout << a + b;
+		break;
+
+	case '-':
+		std::cout << a - b;
+		break;
+
+	case '*':
+		std::cout << a * b;
+		break;
+
+	case '/':
+		std::cout << a / b;
+		break;
+
+	case '%':
+		std::cout << a % b;
+		break;
+
+	default:
+		std::cout << "\nOperation symbol not valid !\n";
+
+	}
+
 }
 
+int getUserInput()
+{
+	int x;
+
+	std::cout << "Please enter a digit : ";
+
+	std::cin >> x;
+
+	return x;
+
+}
 
 
 //--------------------- main ------------------
 
 int main()
 {
+	int a{ getUserInput() };
+	int b{ getUserInput() };
 
-	printDigitName(' ZA'); // char only consider last letter
-	std::cout << '\n';
+	
+	// select the operator
+	std::cout << "Enter the operation symbol : ";
+
+	char opSymbol;
+
+	std::cin >> opSymbol;
+
+	//do the operation
+	calculate(a, b, opSymbol);
 
 	return 0;
 
