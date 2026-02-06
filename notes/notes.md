@@ -468,4 +468,5 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * backward jump cause loop
 * forward jump skips the code
 * using goto is not recommended. 
-* [[fallthrough]] attribute wont work for "statement" labels. it only works for "defaul" and "case" labels
+* [[fallthrough]] attribute wont work for "statement" labels. it only works for "defaul" and "case" labels.
+* goto statement label declaration not necessary even if statement label defined.
