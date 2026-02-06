@@ -461,6 +461,7 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 
 * goto has never ending looping risk
 * avoid using goto, it causes Sphagetti code like twisted and tangled.
+* we can do tangling jumps here and there into diff scopes within same function scope only while without var init problem
 * fwd jump apo, even if use goto in specific scope and the statement is outside of its scope, still it works bcz they are function scope.
 * goto is function scope
 * if a goto with label name defined, then its label should be declared somewhere.
