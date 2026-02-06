@@ -456,8 +456,20 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 ### Project Logic Overview
 
 
+# Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
 
-## New things I learned
+1. able to Bypass using goto.
+2. diff scope goto targetting a statement label which techincally not seen by it works fine as they fall into Function Scope.
+3. just decalring statement label without using it through goto is 'technically Valid' but compiler throws warning. 
+4. using 'just statement label' as a Sub-heading is bad idea as warnings throw happens.
+   but same scope but diff scope inside var init will not cause error based on its lifetime. (not sure abt diff scope Heap var init)
+5. bkwd jmp creates loop
+6. fwd jmp skips middle code
+7. statement labels requires atleast null statement even if there isn't in statements.
+
+
+
+## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * goto has never ending looping risk
 * avoid using goto, it causes Sphagetti code like twisted and tangled.
@@ -475,6 +487,9 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * goto statement label declaration not necessary even if statement label defined.
 * Remember ! you cannot fwd jmp if any initialization which is in same scope takes place bfr the statement label. it will cause a error.
   But you can jump if the initialization takes place in a diff scope.
+* same function scope and diff scope inside jumping causes bypass of logic risk. DANGEROUS!!!
+
+
 
 
   ### Scenario 1: Same Scope (Fwd Jmp Error) :
@@ -504,3 +519,105 @@ You can practically use goto to bypass any code within the same function, includ
 	Jumping Out of Scopes:	You can always jump from a nested block (inner scope) to an outer scope. The variables inside the block are destroyed when you jump out.
 
 	Jumping Into Scopes:	You can jump into a nested block, but it is dangerous and usually avoided.
+
+
+
+Syntax & Scope
+--------------
+• Conditional Jump (Switch Statement):	This is a conditional jump. The execution flow only jumps to a specific spot 
+										"conditionally based on the result of an expression" (such as matching a variable against a case value). 
+
+• Unconditional Jump:		goto forces the execution flow to jump to a specific label immediately. Bypass of logic checks risk.
+							As the name implies, this jump "always happens" regardless of the program's state. In C++,
+							this is implemented using the goto statement, which forces the execution flow to move immediately to a specific label.
+
+• Function Scope:			Labels are visible throughout the entire function, meaning you can jump to a label before it is defined (no forward declaration needed).
+• Label Requirement:		A label must be attached to a statement. If a label is at the very end of a function, use a null statement (;).
+
+
+
+Jumping Rules
+-------------
+• Internal Only:			You cannot jump out of one function and into another.
+• Forward Limitation:		You cannot jump forward over a variable initialization if that variable is still in scope at the destination label.
+• Backward Allowance:		You can jump backward over a variable initialization (the variable will be re-initialized).
+
+
+
+Best Practices
+--------------
+• Spaghetti Code:			Avoid goto as it creates tangled, hard-to-follow logic ("spaghetti code").
+• Preferred Alternatives:	Use if, while, and for loops for standard flow control.
+• The Exception:			It is acceptable to use goto to break out of multiple nested loops, as this is often cleaner than the alternatives.
+
+
+# from learncpp.com
+
+" Second, we were able to jump to the statement labeled by end even though we hadn’t declared end yet due to statement labels having function scope. 
+No forward declaration of statement labels is necessary. "
+
+
+Explanation:
+
+In C++, the compiler usually reads your code from top to bottom. If you use a variable on line 10, it must be created on line 9 or above.
+
+However, labels are different. "Before it is formally defined" means you can tell the compiler to jump to a name (like end:) 
+even though the line where you actually wrote end: appears much later in the file.
+
+
+
+The Meaning:
+
+In simple terms: The instruction to jump comes first in the code, and the destination (the label) comes later. 
+The compiler doesn't get confused because it "scans" the whole function for labels before it starts processing the logic
+
+
+
+# -> ??? Can i not even use goto but i will declare the statement label somwhere (maybe i will use it like a subheading) ???
+
+
+What is Possible (Technical Reality) // its valid but not a good practice
+
+Valid Syntax:		It is technically legal to declare a label and never use it; the program will compile and run normally.
+
+Compiler Warnings:	Most modern compilers will flag this with a warning (e.g., unused label) because they expect every label to have a corresponding goto.
+
+Function Scope:		Because labels have function scope, they are "visible" to the entire function, but if unused, they act as empty landmarks that the CPU simply ignores during execution.
+
+
+
+# Best Practices 
+
+Avoid Labels for Organization like subheadings :	Labels are intended for control flow (jumping). 
+													Using them as headers can confuse other developers who will look for a goto that doesn't exist.
+
+
+Use Comments for Headings:		Use standardized comment blocks (e.g., // --- Section Name ---) for organization. They are ignored by the compiler,
+								generate no warnings, and are the industry standard for documentation.
+
+
+Keep it Clean:					Remove unused labels to keep your compiler output "Warning Free," which makes it easier to spot actual logic errors.
+
+
+
+
+
+
+# * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+``` The "Duff's Device" Logic (Switch-Goto Hybrid) ```
+
+Since mentioned [[fallthrough]], it's worth noting that you can actually mix labels and other control structures in very weird ways (like putting a label inside a switch or a while loop).
+
+
+The Risk: 
+This creates "unstructured" code. Even if it's "technically valid," it makes the code nearly impossible to debug. This is the ultimate "Spaghetti Code" scenario.
+
+
+
+Updated Note on Heap Memory (Clarification)
+I weren't sure about the Heap in your notes. Here is the 1-line rule for a summary:
+
+Rule: goto only cares about the Pointer Variable (the address), not the Heap Memory (the data). 
+		Jumping over delete is legal but creates a Memory Leak;
+		Jumping over new is allowed only if the pointer variable itself is in a different/bypassed scope.
