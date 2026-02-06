@@ -65,3 +65,30 @@ int main()
 	
 
 }
+
+
+/* 
+	OUTPUT : 
+--------------------------------------------------------
+
+
+we are at label - 'beforeEnd:'
+
+
+initiating jump to end....
+
+we are at label - 'end:'
+
+
+entered to(!age) condition
+
+ending....
+
+we are at label - 'close:'
+
+
+<<<<<< Closed >>>>>
+
+
+--------------------------------------------------------
+*/
