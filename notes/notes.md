@@ -455,6 +455,8 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 
 ### Project Logic Overview
 
+```As Dijkstra says somewhat humorously, “the quality of programmers is a decreasing function of the density of go to statements in the programs they produce”.```
+
 
 # Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
 
