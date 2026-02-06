@@ -6,10 +6,8 @@
 
 void printCats(bool skip)
 {
+	
 
-	std::cout << "cats\n";
-end:
-	std::cout << "end of func\n";; // statement labels must be associated with a statement
 }
 
 //--------------------- main ------------------

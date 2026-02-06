@@ -470,3 +470,4 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * using goto is not recommended. 
 * [[fallthrough]] attribute wont work for "statement" labels. it only works for "defaul" and "case" labels.
 * goto statement label declaration not necessary even if statement label defined.
+* Remember ! you cannot fwd jmp if any initialization takes place bfr the statement label. it will cause a error.
