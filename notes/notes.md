@@ -460,6 +460,8 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 ## New things I learned
 
 * goto has never ending looping risk
+* avoid using goto, it causes Sphagetti code like twisted and tangled.
+* fwd jump apo, even if use goto in specific scope and the statement is outside of its scope, still it works bcz they are function scope.
 * goto is function scope
 * if a goto with label name defined, then its label should be declared somewhere.
 * Statement Labels must attach to a statements. if the label is in end, then a ';' is required.
@@ -470,4 +472,34 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * using goto is not recommended. 
 * [[fallthrough]] attribute wont work for "statement" labels. it only works for "defaul" and "case" labels.
 * goto statement label declaration not necessary even if statement label defined.
-* Remember ! you cannot fwd jmp if any initialization takes place bfr the statement label. it will cause a error.
+* Remember ! you cannot fwd jmp if any initialization which is in same scope takes place bfr the statement label. it will cause a error.
+  But you can jump if the initialization takes place in a diff scope.
+
+
+  ### Scenario 1: Same Scope (Fwd Jmp Error) :
+
+  goto label;
+    int x { 5 }; // Error: forward jump skips initialization
+label:
+    // x inga scope-la iruku, aana initialize aagala!
+
+
+	### Scenario 2: Different/Nested Scope (Allowed) :
+
+	goto label; // Forward jump
+    {
+        int x { 5 }; // Variable in a different scope
+    }
+label:
+    // Inga x scope-laye illa, so no problem!
+
+
+
+
+You can practically use goto to bypass any code within the same function, including nested blocks and conditions.
+
+	Bypassing Conditions:	A goto will skip any if, else, or loop condition checks sitting between the goto and its target label.
+
+	Jumping Out of Scopes:	You can always jump from a nested block (inner scope) to an outer scope. The variables inside the block are destroyed when you jump out.
+
+	Jumping Into Scopes:	You can jump into a nested block, but it is dangerous and usually avoided.
