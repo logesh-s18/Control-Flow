@@ -471,10 +471,16 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 
 
 
+# Use cases: ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exiting Nested Loops:   It is the cleanest way to break out of a nested loop (a loop inside another loop) without exiting the entire function, avoiding the need for complex boolean flags
+
+
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * goto has never ending looping risk
 * avoid using goto, it causes Sphagetti code like twisted and tangled.
+* goto makes unpreditable and restructuring it with hard workflow.
 * we can do tangling jumps here and there into diff scopes within same function scope only while without var init problem
 * fwd jump apo, even if use goto in specific scope and the statement is outside of its scope, still it works bcz they are function scope.
 * goto is function scope
