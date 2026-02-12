@@ -664,18 +664,30 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * while statement (while loop) is the simplest loop and similiar to if condition statement
+
+* cause of Unintentional infinite loops :
+		
+        - while snag, 
+		- forgeting to increament iteration of the condition check, 
+		- placing 'true' in condition. 
+		- never making a logic to 'false' to stop the loop.
+		- a condition which can never evaluate to false
+
+
 * infinite loop exit strategies:
 		
-		- return, 
+		- return, (with if condtion inside)
 		- break, 
 		- goto jumping, 
 		- exit(), 
 		- exception throw,
 		- user killing program
 
-
 * placing ; (Semicolon Snag) after while condition will cause infinite loop as it represents null statement body and if the condition check is true once will always be true.
 * code cannot go to the next line when snag takes place in while. it will cause infinite loop as the condition is true.
+
+
+
 
 # Best Practices 
 
