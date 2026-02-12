@@ -11,19 +11,21 @@ bool printLoop()
 }
 
 
-void printUpto(int outer) // Function to print numbers from 1 to outer value
-{
+//void printUpto(int outer) // Function to print numbers from 1 to outer value
+//{
+//
+//	int inner{ 1 }; // Initialize counter variable to 1
+//
+//	while (inner <= outer) // Loop while counter is less than or equal to outer
+//	{
+//		cout << inner << ' '; // Print current number with a space
+//
+//		++inner; // Increment counter
+//	}
+//
+//}
 
-	int inner{ 1 }; // Initialize counter variable to 1
 
-	while (inner <= outer) // Loop while counter is less than or equal to outer
-	{
-		cout << inner << ' '; // Print current number with a space
-
-		++inner; // Increment counter
-	}
-
-}
 
 int main() // Entry point of the program
 {
@@ -33,7 +35,14 @@ int main() // Entry point of the program
 	while (outer <= 5) // Loop 5 times (print 5 rows)
 	{
 
-		printUpto(outer); // Print numbers from 1 to outer value
+		int inner{ 1 }; // Initialize counter variable to 1
+
+		while (inner <= outer) // Loop while counter is less than or equal to outer
+		{
+			cout << inner << ' '; // Print current number with a space
+
+			++inner; // Increment counter
+		}
 
 		cout << '\n'; // Print newline to move to next row
 
