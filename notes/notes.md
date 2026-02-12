@@ -661,6 +661,7 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* while statement (while loop) is the simplest loop and similiar to if condition statement
 
 
 # Best Practices 
