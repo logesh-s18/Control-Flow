@@ -15,29 +15,24 @@ int main()
  
 	int count{ 1 };
 
-	while (count <= 50)
+	while (count <= 100)
 	{
 		// adding prefix'0' to 1-9 numbers
 		if (count < 10)
 		{
-			std::cout << 0 << count << ' ';
+			std::cout << '0';
 
 		}
 
+		std::cout << count << ' ';
 
-		//padding a new line whenever the end number is divisible by 10
-		else if (count % 10 == 0)
+		//if the loop variable is divisible by 10, print a newline
+		if (count % 10 == 0)
 		{
-			std::cout << count << ' ';
 			std::cout << '\n';
 		}
 
-		
-		else if (count >= 10 && count % 10 != 0)
-		{
-			std::cout << count << ' ';
-		}
-
+		// increment the loop counter
 		++count;
 
 	}
