@@ -13,24 +13,17 @@ bool printLoop()
 int main()
 {
  
-	int count{ 1 };
+    int count{ 1 };
 
+    //Unintentionally placing a semicolon after the condition of a while-loop is a good way to hang your program.
+   
+    while (count <= 10); // note the semicolon here. INFINITE LOOOOOP HAPPENS
+    { // GOES AS SEPARATE BLOCK
+        std::cout << count << ' ';
+        ++count;
+    }
 
-	if (printLoop());
-		std::cout << "Hi, Im IF.... ";
+    std::cout << "done!\n";
 
-	//while (printLoop()); // 
-	//{
-	//	std::cout << "Loop again (y/n?): ";
-	//	char c;
-	//	std::cin >> c;
-
-	//	if (c == 'n') 
-	//		return 0;
-
-	//}
-
-	std::cout << "done!";
-
-	return 0;
+    return 0;
 }
