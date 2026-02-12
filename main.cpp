@@ -9,14 +9,11 @@ using namespace std;
 int main()
 {
  
-	int count{ 11 };
+	int count{ 1 };
 
 	while (count <= 10)
 	{
-		std::cout << count << " ";
-		
-		++count;		//in main scope. incrementing this for the next iteration. otherwise, the same count value will be checked by while for the second iteration which will make it always 'true' without no change in the value will cause infinite looooooop
-		
+		std::cout << count << " "; // having the same value without changing it for while condition check will create infinite loop
 	}
 
 	std::cout << "done!";
