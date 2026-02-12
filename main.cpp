@@ -13,19 +13,25 @@ bool printLoop()
 int main()
 {
  
-    int count{ 1 };
+    unsigned int count{ 10 }; // note: unsigned
 
-    //Unintentionally placing a semicolon after the condition of a while-loop is a good way to hang your program.
-   
-   while (printLoop()); // will keep calling this function until it returns false
-    { // GOES AS SEPARATE BLOCK
-        std::cout << count << ' ';
-        ++count;
+    // count from 10 down to 0
+    while (count >= 0)
+    {
+       
+        std::cout << count;
+       
+        --count; // since the 'count' var is unsigned, while after 0, -- decrement, gives again a larger unsigned number due to its data type behavior which doesnt have negative numbers
     }
 
+    std::cout << '\n';
 
-
-    std::cout << "done!\n";
+    return 0; // you can duplicate many return in same function scope but remaing will be dead code
+    return 0;
+    return 0;
+    return 0;
+    return 0;
+    return 0;
 
     return 0;
 }

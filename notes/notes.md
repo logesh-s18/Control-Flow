@@ -649,7 +649,47 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 
 ### Project Logic Overview
 
+Introduction to loops:	
+Control flow constructs that allow a piece of code to execute repeatedly until a specific condition is met.
 
+
+While statements:		
+The simplest loop type allows a statement to execute repeatedly as long as the checked condition evaluates to true.
+
+
+While-statements that evaluate to false initially: 
+If the loop's condition is false the first time it is checked, the code inside the loop will be skipped entirely.
+
+Infinite loops: 
+A loop where the condition always evaluates to true will never terminate and will run forever.
+
+
+Intentional infinite loops: 
+Developers often deliberately create infinite loops using while (true) for applications that need to run continuously.
+
+
+Unintentional infinite loops: 
+Common mistakes, such as placing a semicolon immediately after the while condition, can cause your program to hang by creating a loop that does nothing forever.
+
+
+Loop variables and naming: 
+These variables control how many times a loop executes and traditionally use short names like i, j, and k,.
+
+
+Integral loop variables should be signed: 
+Using unsigned integers for counters can lead to infinite loops because they wrap around to a large positive number instead of becoming negative.
+
+
+Doing something every N iterations: 
+You can use the remainder operator (e.g., count % 10 == 0) to trigger an action, such as printing a newline, at specific intervals.
+
+
+Nested loops: 
+Loops can be placed inside other loops, meaning the entire inner loop completes its full run for every single iteration of the outer loop.
+
+
+Quiz time: 
+Practice exercises that cover variable scope, printing ASCII characters, and manipulating nested loop logic
 
 
 
@@ -683,17 +723,43 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 		- exception throw,
 		- user killing program
 
+
+
 * placing ; (Semicolon Snag) after while condition will cause infinite loop as it represents null statement body and if the condition check is true once will always be true.
 * code cannot go to the next line when snag takes place in while. it will cause infinite loop as the condition is true.
+* sometimes while snag is ok to use but never use this snag to if condition. its always a mistake.
+* The logic that makes the while loop condition false, stops it, and causes it to exit must be written inside the while loop body.
+* You must place the logic that updates the loop condition (such as incrementing a counter) inside the loop body;
+  otherwise, the condition will never become false, causing an unintentional infinite loop that hangs your program.
+
+
+
+
+
 
 
 
 
 # Best Practices 
 
+Unlike if-statements, where a semicolon after the condition is always a mistake, you will occasionally see while-statements that do this intentionally.
+
+For example, if we want to continuously call a function until it returns false, we can write that concisely as follows:
+				
+				{
+				  while (keepRunning()); // will keep calling this function until it returns false
+				}
+
 
 
 # * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+
+
+
+# * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
 * you can use == to compare a char with its ASCII value too
+* you can duplicate many return in same function scope but remaing will be dead code
