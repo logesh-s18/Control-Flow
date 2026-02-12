@@ -14,11 +14,10 @@ int main()
 {
  
     int count{ 1 };
+    while (count <= 10) // this is an infinite loop
+        ;               // whose body is a null statement
 
-    //Unintentionally placing a semicolon after the condition of a while-loop is a good way to hang your program.
-   
-    while (count <= 10); // note the semicolon here. INFINITE LOOOOOP HAPPENS
-    { // GOES AS SEPARATE BLOCK
+    { // this is no longer associated with the while loop
         std::cout << count << ' ';
         ++count;
     }
