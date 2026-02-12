@@ -13,10 +13,10 @@ bool printLoop()
 int main()
 {
  
-     int count{ 10 }; // note: make it signed
+    unsigned int count{ 10 }; // note: unsigned
 
     // count from 10 down to 0
-    while (count >= 0)
+    while (count >= 0)   //  It starts out by printing 10 9 8 7 6 5 4 3 2 1 blastoff! as desired, but then loop variable count overflows
     {
         if (count == 0)
         {

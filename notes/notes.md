@@ -733,7 +733,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
   otherwise, the condition will never become false, causing an unintentional infinite loop that hangs your program.
 
 * Integral loop variables should be signed, (unsigned will cause issue mostly while in decrement of a integral loop condition).
-
+  Remember! you might think why not it to stop while 0 on decreamneting. but here's the check, once the iteration ends, it will always go back to top of the while statement to check again the condition, there 'true' or 'false' boolean based the iteration works
 
 
 
