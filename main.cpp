@@ -10,34 +10,36 @@ bool printLoop()
 	return true;
 }
 
-int main()
+
+void printUpto(int outer) // Function to print numbers from 1 to outer value
+{
+
+	int inner{ 1 }; // Initialize counter variable to 1
+
+	while (inner <= outer) // Loop while counter is less than or equal to outer
+	{
+		cout << inner << ' '; // Print current number with a space
+
+		++inner; // Increment counter
+	}
+
+}
+
+int main() // Entry point of the program
 {
  
-	int count{ 1 };
+	int outer{ 1 }; // Initialize outer loop counter to 1
 
-	while (count <= 100)
+	while (outer <= 5) // Loop 5 times (print 5 rows)
 	{
 
+		printUpto(outer); // Print numbers from 1 to outer value
 
-		//add '0' if the number are from 1 to 9 
-		if (count < 10)
-			cout << '0';
+		cout << '\n'; // Print newline to move to next row
 
-		
-		//print the count numbers
-		cout << count << ' ';
-
-
-		//padding after a number divisible by 10 comes
-		if (count % 10 == 0)
-		{
-			cout << '\n';
-		}
-
-		//inc the counter
-		++count;
+		++outer; // Increment outer counter
 
 	}
 
-    return 0;
+    return 0; // Return 0 to indicate successful execution
 }
