@@ -13,7 +13,7 @@ bool printLoop()
 int main()
 {
  
-    unsigned int count{ 10 }; // note: unsigned
+     int count{ 10 }; // note: make it signed
 
     // count from 10 down to 0
     while (count >= 0)

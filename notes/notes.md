@@ -732,6 +732,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 * You must place the logic that updates the loop condition (such as incrementing a counter) inside the loop body;
   otherwise, the condition will never become false, causing an unintentional infinite loop that hangs your program.
 
+* Integral loop variables should be signed, (unsigned will cause issue mostly while in decrement of a integral loop condition).
 
 
 
