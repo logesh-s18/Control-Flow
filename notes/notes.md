@@ -662,11 +662,23 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * while statement (while loop) is the simplest loop and similiar to if condition statement
+* infinite loop exit strategies:
+		
+		- return, 
+		- break, 
+		- goto jumping, 
+		- exit(), 
+		- exception throw,
+		- user killing program
 
+
+* 
 
 # Best Practices 
 
 
 
-
 # * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+* you can use == to compare a char with its ASCII value too
