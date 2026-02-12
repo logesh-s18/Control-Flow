@@ -11,7 +11,7 @@ int main()
  
 	int count{ 1 };
 
-	while (count <= 10)
+	while (true) // Intentional infinite loops
 	{
 		std::cout << count << " "; // having the same value without changing it for while condition check will create infinite loop
 	}
