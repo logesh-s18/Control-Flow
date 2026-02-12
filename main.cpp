@@ -17,22 +17,24 @@ int main()
 
 	while (count <= 100)
 	{
-		// adding prefix'0' to 1-9 numbers
+
+
+		//add '0' if the number are from 1 to 9 
 		if (count < 10)
-		{
-			std::cout << '0';
+			cout << '0';
 
-		}
+		
+		//print the count numbers
+		cout << count << ' ';
 
-		std::cout << count << ' ';
 
-		//if the loop variable is divisible by 10, print a newline
+		//padding after a number divisible by 10 comes
 		if (count % 10 == 0)
 		{
-			std::cout << '\n';
+			cout << '\n';
 		}
 
-		// increment the loop counter
+		//inc the counter
 		++count;
 
 	}
