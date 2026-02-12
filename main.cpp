@@ -18,20 +18,18 @@ int main()
     // count from 10 down to 0
     while (count >= 0)
     {
-       
-        std::cout << count;
-       
-        --count; // since the 'count' var is unsigned, while after 0, -- decrement, gives again a larger unsigned number due to its data type behavior which doesnt have negative numbers
+        if (count == 0)
+        {
+            std::cout << "blastoff!";
+        }
+        else
+        {
+            std::cout << count << ' ';
+        }
+        --count;
     }
 
     std::cout << '\n';
-
-    return 0; // you can duplicate many return in same function scope but remaing will be dead code
-    return 0;
-    return 0;
-    return 0;
-    return 0;
-    return 0;
 
     return 0;
 }
