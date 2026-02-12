@@ -17,7 +17,7 @@ int main()
 
     //Unintentionally placing a semicolon after the condition of a while-loop is a good way to hang your program.
    
-    while (printLoop()); // note the semicolon here. INFINITE LOOOOOP HAPPENS
+    while (count <= 10); // terminal will be empty. we might think there isnt loop happens, but its happening and not visible
     { // GOES AS SEPARATE BLOCK
         std::cout << count << ' ';
         ++count;
