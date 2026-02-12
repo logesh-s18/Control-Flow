@@ -11,6 +11,9 @@ int main()
  
 	int count{ 1 };
 
+
+	//It is common to see this kind of loop in web server applications that run continuously and service web requests.
+
 	while (true) // Intentional infinite loops
 	{
 		//way to exit an infinite loop
