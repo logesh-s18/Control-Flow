@@ -15,14 +15,10 @@ int main()
 	{
 		std::cout << count << " ";
 		
-		if (count == 9) // just placing the goto statement to jump out of the loop when value 9 printed
-			goto end;
-		
 		++count;		//in main scope. incrementing this for the next iteration. otherwise, the same count value will be checked by while for the second iteration which will make it always 'true' without no change in the value will cause infinite looooooop
 		
 	}
 
-	end:
 	std::cout << "done!";
 
 	return 0;
