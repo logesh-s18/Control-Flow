@@ -13,34 +13,34 @@ bool printLoop()
 int main()
 {
  
-    unsigned int count{ 10 }; // note: unsigned
+	int count{ 1 };
 
-    // count from 10 down to 0
-    while (count >= 0)   
-    {
-        /*
-        
-        It turns out, this program is an infinite loop. 
-        It starts out by printing 10 9 8 7 6 5 4 3 2 1 blastoff! as desired, 
-        but then loop variable count overflows, and starts counting down from 4294967295 (assuming 32-bit integers). 
-        Why? Because the loop condition count >= 0 will never be false! When count is 0, 0 >= 0 is true. 
-        Then --count is executed, and count wraps around back to 4294967295. 
-        And since 4294967295 >= 0 is true, the program continues. Because count is unsigned, it can never be negative, 
-        and because it can never be negative, the loop won’t terminate.       
-        
-        */
-        if (count == 0)
-        {
-            std::cout << "blastoff!";
-        }
-        else
-        {
-            std::cout << count << ' ';
-        }
-        --count;
-    }
+	while (count <= 50)
+	{
+		// adding prefix'0' to 1-9 numbers
+		if (count < 10)
+		{
+			std::cout << 0 << count << ' ';
 
-    std::cout << '\n';
+		}
+
+
+		//padding a new line whenever the end number is divisible by 10
+		else if (count % 10 == 0)
+		{
+			std::cout << count << ' ';
+			std::cout << '\n';
+		}
+
+		
+		else if (count >= 10 && count % 10 != 0)
+		{
+			std::cout << count << ' ';
+		}
+
+		++count;
+
+	}
 
     return 0;
 }

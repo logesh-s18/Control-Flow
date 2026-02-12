@@ -741,7 +741,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 
 
-# Best Practices 
+# Best Practices
 
 Unlike if-statements, where a semicolon after the condition is always a mistake, you will occasionally see while-statements that do this intentionally.
 
@@ -751,6 +751,8 @@ For example, if we want to continuously call a function until it returns false, 
 				  while (keepRunning()); // will keep calling this function until it returns false
 				}
 
+
+* Integral loop variables should generally be a signed integral type.
 
 
 # * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
