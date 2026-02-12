@@ -19,7 +19,7 @@ int main()
 		char c;
 		std::cin >> c;
 
-		if (c == 110) // you can use == to compare a char with its ASCII value too
+		if (c == 'n') // you can use == to compare a char with its ASCII value too
 			return 0;
 
 	}
