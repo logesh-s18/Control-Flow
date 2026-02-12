@@ -4,7 +4,11 @@
 
 using namespace std;
 
-
+bool printLoop()
+{
+	std::cout << "Looping...";
+	return true;
+}
 
 int main()
 {
@@ -12,20 +16,19 @@ int main()
 	int count{ 1 };
 
 
-	//It is common to see this kind of loop in web server applications that run continuously and service web requests.
+	if (printLoop());
+		std::cout << "Hi, Im IF.... ";
 
-	while (true) // Intentional infinite loops
-	{
-		//way to exit an infinite loop
+	//while (printLoop()); // 
+	//{
+	//	std::cout << "Loop again (y/n?): ";
+	//	char c;
+	//	std::cin >> c;
 
-		std::cout << "Loop again (y/n?): ";
-		char c;
-		std::cin >> c;
+	//	if (c == 'n') 
+	//		return 0;
 
-		if (c == 'n') // you can use == to compare a char with its ASCII value too
-			return 0;
-
-	}
+	//}
 
 	std::cout << "done!";
 
