@@ -14,7 +14,7 @@ int main()
 {
  
     int count{ 1 };
-    while (count <= 10) // this is an infinite loop
+    while (printLoop()) // this is an infinite loop
         ;               // whose body is a null statement
 
     { // this is no longer associated with the while loop
