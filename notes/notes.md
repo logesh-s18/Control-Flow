@@ -672,7 +672,8 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 		- user killing program
 
 
-* 
+* placing ; (Semicolon Snag) after while condition will cause infinite loop as it represents null statement body and if the condition check is true once will always be true.
+* code cannot go to the next line when snag takes place in while. it will cause infinite loop as the condition is true.
 
 # Best Practices 
 
