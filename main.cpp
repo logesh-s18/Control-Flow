@@ -25,29 +25,21 @@ using namespace std;
 int main() 
 {
 
-	int outer{ 5 };
+    int row{ 5 };  // 5 rows in the theater
 
-	while (outer >= 1 ) // correction
-	{
+    while (row >= 1)  // clean from back row to front
+    {
+        int seat{ row };  // this row has 'row' number of seats to clean
 
-		// start inner counter equal to current outer value
-		int inner{ outer };
+        while (seat >= 1)
+        {
+            std::cout << "Clean seat " << seat << " ";
+            --seat;  // move to next seat
+        }
 
-
-		// print numbers from inner down to 1
-		while (inner > 0) // correction
-		{
-
-			std::cout << inner-- << ' ';   // correction - using post increment
-
-		}
-
-		// move to next line after each row
-		cout << '\n';
-
-		outer--;   // decrease row count
-
-	}
+        std::cout << "\nRow finished\n\n";
+        --row;  // move to next row
+    }
 
 	return 0;
 }
