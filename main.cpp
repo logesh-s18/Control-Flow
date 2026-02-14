@@ -25,20 +25,20 @@ using namespace std;
 int main() 
 {
 
-    int row{ 5 };  // 5 rows in the theater
+    int table{ 5 };  // 5 tables to serve
 
-    while (row >= 1)  // clean from back row to front
+    while (table >= 1)
     {
-        int seat{ row };  // this row has 'row' number of seats to clean
+        int plate{ table };  // number of plates for this table
 
-        while (seat >= 1)
+        while (plate >= 1)
         {
-            std::cout << "Clean seat " << seat << " ";
-            --seat;  // move to next seat
+            std::cout << "Serve plate " << plate << " at table " << table << '\n';
+            --plate;  // next plate
         }
 
-        std::cout << "\nRow finished\n\n";
-        --row;  // move to next row
+        std::cout << "Table " << table << " completed\n\n";
+        --table;  // move to next table
     }
 
 	return 0;
