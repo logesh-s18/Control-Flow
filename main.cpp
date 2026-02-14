@@ -1,76 +1,45 @@
 
-#include <iostream>
-#include <print> // to use std::print instead of cout for simple outputs
-
-using namespace std;
-
-bool printLoop()
-{
-	std::cout << "Looping...";
-	return true;
-}
-
-
-//void printUpto(int outer) // Function to print numbers from 1 to outer value
-//{
-//
-//	int inner{ 1 }; // Initialize counter variable to 1
-//
-//	while (inner <= outer) // Loop while counter is less than or equal to outer
-//	{
-//		cout << inner << ' '; // Print current number with a space
-//
-//		++inner; // Increment counter
-//	}
-//
-//}
-
-
-
-int main() // Entry point of the program
-{
- 
-
-	int count{ 1 };
-
-	while (count <= 100)
-	{
-		//block condition for prefixing the 0s
-		if (count < 10)
-			cout << 0;
-
-
-		//print numbers
-		cout << count << ' ';
-
-
-		//block condition for 10 divisible numbers to create a newline
-		if (count % 10 == 0)
-			cout << '\n';
-
-		++count;
-
-	}
-
-    return 0; // Return 0 to indicate successful execution to main
-}
-
-
 
 /*
+https://www.learncpp.com/cpp-tutorial/introduction-to-loops-and-while-statements/
+
+Question #2
+
+Write a program that prints out the letters a through z along with their ASCII codes. Use a loop variable of type char.
 
 
-Logic :
-
-
-- create a while statement to loop the repated actions, and inside the loop : 
-	- need to prefix 0s for 1-9 with a condition check separate scope
-	- print the numbers in main scope
-	- again a if condition to check if the loop variable 'count' is div by 10 and print a newline which will look like table grid structure in terminal.
-	- increment the count, otherwise the same value will cause infinite loop. we need to define a false logic inside loop's body to avoid infinite looping.
-
-- return 0 for the main data type;
-
+Hint: To print characters as integers, you have to use a static_cast.
 
 
 */
+
+#include <iostream>
+
+using namespace std;
+
+
+
+int main() 
+{
+	//giving the column heading for terminal before the loop
+
+	char a = 'a';
+
+	char z = 'z';
+
+
+	//using 'a' as looping variable where the loop start and end depends on.
+
+	while (a <= z) // here the comparision will happen based on their ASCII. so the iteration until it reaches 'z' ASCII, loop condition will be true.
+	{
+		//im printing the alphabets and casting the char's int value to explicitly print the ASCII values too. bcz, char wont print ASCII, it will print the original character value
+		cout << a << " - " << static_cast<int>(a) << '\n';
+		
+
+
+		++a; // incrementing the ASCII which goes for next alphabet's ASCII
+
+	}
+
+	return 0;
+}
