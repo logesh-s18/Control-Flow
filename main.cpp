@@ -40,6 +40,7 @@ int main()
 		++a; // incrementing the ASCII which goes for next alphabet's ASCII
 
 
+
 	}
 
 	return 0;
