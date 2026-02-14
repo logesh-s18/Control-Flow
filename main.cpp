@@ -45,7 +45,7 @@ int main()
 		// move to next line after each row
 		cout << '\n';
 
-		--outer;   // decrease row count
+		outer--;   // decrease row count
 
 	}
 
