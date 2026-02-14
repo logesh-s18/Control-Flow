@@ -704,6 +704,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * while statement (while loop) is the simplest loop and similiar to if condition statement
+* The syntax is: while (condition) statement;
 
 * cause of Unintentional infinite loops :
 		
@@ -744,13 +745,50 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 # Best Practices
 
-Unlike if-statements, where a semicolon after the condition is always a mistake, you will occasionally see while-statements that do this intentionally.
+* Remember the 3 conditions while using while loop. 
+   
+		1) have a loop variable which controls the loop iteration
+		2) initialize the loop variable
+		3) define the inc or dec operator for that loop variable which act as a switch button to turn off the loop with 'false' condtion.
 
-For example, if we want to continuously call a function until it returns false, we can write that concisely as follows:
-				
-				{
-				  while (keepRunning()); // will keep calling this function until it returns false
+
+
+		Elabarately, giving below:
+
+		* A loop should have a control variable that drives the iteration
+
+				int i = 0;
+				while (i < 5) // i controls the loop
+	            { 
+					i++;  
 				}
+
+
+		* The control variable must be initialized before the loop runs
+
+				int i = 0;  // initialized before entering loop
+				while (i < 5) { 
+					i++; 
+				}
+
+
+		* The loop control variable must be incremented or decremented each iteration so the condition eventually becomes false
+
+				int i = 5;
+				while (i > 0) { 
+					i--;  // decrement moves toward exit
+				}
+
+
+
+* Unlike if-statements, where a semicolon after the condition is always a mistake, you will occasionally see while-statements that do this intentionally.
+
+	For example, if we want to continuously call a function until it returns false, we can write that concisely as follows:
+				
+					{
+					  while (keepRunning()); // will keep calling this function until it returns false
+					}
+
 
 
 * Integral loop variables should generally be a signed integral type.

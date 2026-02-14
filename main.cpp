@@ -3,12 +3,15 @@
 /*
 https://www.learncpp.com/cpp-tutorial/introduction-to-loops-and-while-statements/
 
-Question #2
+Question #3
 
-Write a program that prints out the letters a through z along with their ASCII codes. Use a loop variable of type char.
+Invert the nested loops example so it prints the following:
 
-
-Hint: To print characters as integers, you have to use a static_cast.
+5 4 3 2 1
+4 3 2 1
+3 2 1
+2 1
+1
 
 
 */
@@ -22,13 +25,26 @@ using namespace std;
 int main() 
 {
 
-	//simple, no need to create a variable for 'z'
+	int outer{ 5 };
 
-	char myChar{ 'a' };
-	while (myChar <= 'z')
+	while (outer >= 1 ) // correction
 	{
-		std::cout << myChar << ' ' << static_cast<int>(myChar) << '\n';
-		++myChar;
+
+		int inner{ outer };
+
+		while (inner <= outer && inner > 0)
+		{
+
+			cout << inner << ' ';
+
+			--inner;
+
+		}
+
+		cout << '\n';
+
+		--outer;
+
 	}
 
 	return 0;
