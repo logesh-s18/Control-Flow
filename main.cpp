@@ -30,20 +30,22 @@ int main()
 	while (outer >= 1 ) // correction
 	{
 
+		// start inner counter equal to current outer value
 		int inner{ outer };
 
-		while (inner <= outer && inner > 0)
+
+		// print numbers from inner down to 1
+		while (inner > 0) // correction
 		{
 
-			cout << inner << ' ';
-
-			--inner;
+			std::cout << inner-- << ' ';   // correction - using post increment
 
 		}
 
+		// move to next line after each row
 		cout << '\n';
 
-		--outer;
+		--outer;   // decrease row count
 
 	}
 
