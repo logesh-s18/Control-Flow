@@ -745,6 +745,8 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 # Best Practices
 
+* sometimes you can use post increament or decrement, bcz no need to 1st print og value and next decrement, useful to merge that two statements into single"
+
 * Remember the 3 conditions while using while loop. 
    
 		1) have a loop variable which controls the loop iteration
