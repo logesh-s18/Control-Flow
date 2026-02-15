@@ -3,16 +3,15 @@
 /*
 https://www.learncpp.com/cpp-tutorial/introduction-to-loops-and-while-statements/
 
-Question #3
+Question #4
 
-Invert the nested loops example so it prints the following:
+Now make the numbers print like this:
 
+		1
+	  2 1
+	3 2 1
+  4 3 2 1
 5 4 3 2 1
-4 3 2 1
-3 2 1
-2 1
-1
-
 
 */
 
@@ -21,27 +20,33 @@ Invert the nested loops example so it prints the following:
 using namespace std;
 
 
-
 int main()
 {
 
-	int outer{1};
+	int rows{ 1 };
 
-	while (outer <= 5)
+	while (rows <= 5)
 	{
 
-		int inner{1};
+		int cols{ 5 }; // explicitly giving bcz we know that it needs 5 columns and also number need to be printed when rows is same or less while decrementing from 5
 
-		while (inner <= outer)
+		while (cols > 0) // which means, to make this false, we need to dec the loop variable
 		{
-			cout << inner++ << ' ';
+
+			// for eg: if row 2 means, while iterating to scan nums and to print, print the number only when the col iteration is == or less than the rows as we decrementing from 5 to 1
+			if (cols <= rows) 
+				cout << cols << ' ';
+			else //for any number which is greater than row, than we print space
+				cout << " " << ' ';
+
+			--cols;  // decrementing to scan from 5 to 1 for each row iteration
+
 		}
 
 		cout << '\n';
 
-		++outer;
+		++rows;
 	}
-
 
 	return 0;
 }
@@ -51,11 +56,11 @@ int main()
 
 Output:
 
-1
-1 2
-1 2 3
-1 2 3 4
-1 2 3 4 5
+		1
+	  2 1
+	3 2 1
+  4 3 2 1
+5 4 3 2 1
 
 
 */
