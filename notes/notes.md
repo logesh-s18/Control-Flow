@@ -698,6 +698,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 * snag in while causes infinite loop. we cannot visualize the terminal if the while condition is basic check. it looks hung but not, loop is happening.
 * able to visualize the while snag loop if we include a function which returns boolean and if its true and if it prints something in terminal. then we could able to see it.
 * under the hood, while snag creates loop if the condition is true
+* to create intentional infinite loops, use 'true' or ';;' in while condition.
 
 
 

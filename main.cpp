@@ -25,22 +25,42 @@ using namespace std;
 int main() 
 {
 
-    int table{ 5 };  // 5 tables to serve
+    // 1. "Outer loop ennan kudukrom, 5"
+    int outer{ 5 };
 
-    while (table >= 1)
+    // 2. "0 reach aagrapo condition false la irukanum"
+    while (outer >= 1)
     {
-        int plate{ table };  // number of plates for this table
+        // 3. "ulla iruka column... iteration value angaium irukum"
+        // (Outer 5 na Inner 5, Outer 4 na Inner 4)
+        int inner{ outer };
 
-        while (plate >= 1)
+        while (inner >= 1)
         {
-            std::cout << "Serve plate " << plate << " at table " << table << '\n';
-            --plate;  // next plate
+            std::cout << inner-- << ' '; //two 'inner' statement create panradhuku badhila single ah vechu post dec op vechukalam. current value um print aagum, next iteration kaga dec um work aagum
         }
 
-        std::cout << "Table " << table << " completed\n\n";
-        --table;  // move to next table
+        std::cout << '\n';
+
+        // 4. "outer ra decrease panite vandhu finish panrom"
+        --outer;
     }
+
 
 	return 0;
 }
 
+
+/*
+
+
+Output:
+
+5 4 3 2 1
+4 3 2 1
+3 2 1
+2 1
+1
+
+
+*/
