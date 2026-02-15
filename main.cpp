@@ -25,25 +25,29 @@ using namespace std;
 int main() 
 {
 
-    // 1. "Outer loop ennan kudukrom, 5"
-    int outer{ 5 };
+    int outer{ 1 };
 
-    // 2. "0 reach aagrapo condition false la irukanum"
-    while (outer >= 1)
+    while (outer <= 5)
     {
-        // 3. "ulla iruka column... iteration value angaium irukum"
-        // (Outer 5 na Inner 5, Outer 4 na Inner 4)
-        int inner{ outer };
+       
+        //total rows
+        int totalRows = 5;
 
-        while (inner >= 1)
+        int inner{ totalRows - outer}; // 5-5 will be 0
+
+        if (inner == 0)
+            std::cout << inner-- << '0';
+
+        while (inner > 0)
         {
-            std::cout << inner-- << ' '; //two 'inner' statement create panradhuku badhila single ah vechu post dec op vechukalam. current value um print aagum, next iteration kaga dec um work aagum
+            std::cout << inner-- << ' '; 
         }
+
+        
 
         std::cout << '\n';
 
-        // 4. "outer ra decrease panite vandhu finish panrom"
-        --outer;
+        ++outer;
     }
 
 
