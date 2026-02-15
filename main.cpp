@@ -33,7 +33,7 @@ int main()
         //total rows
         int totalRows = 5;
 
-        int inner{ totalRows - outer}; // 5-5 will be 0
+        int inner{ (totalRows + 1) - outer}; 
 
         if (inner == 0)
             std::cout << inner-- << '0';
