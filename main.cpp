@@ -7,33 +7,30 @@ using namespace std;
 
 int main()
 {
-	int i = 1;
-	int count = 0;
-	while (i < 3)
+
+	int rows{ 1 };
+
+	while (rows <= 5)
 	{
-		int j = 1;
 
-		while (j < 3)
+		int cols{ 5 };
+
+		while (cols > 0) 
 		{
-			int k = 1;
 
-			while (k < 3)
-			{
-				cout << "HI\n";
-				++count;
-				++k;
-			}
-			++count;
+			if (cols > rows)
+				cout << " " << ' ';
+			else 
+				cout << cols << ' ';
 
-			++j;
+			--cols; 
+
 		}
 
-		++count;
-		++i;
+		cout << '\n';
 
+		++rows;
 	}
-
-	cout << "total : " << count;
 
 	return 0;
 }
