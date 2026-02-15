@@ -699,6 +699,8 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 * able to visualize the while snag loop if we include a function which returns boolean and if its true and if it prints something in terminal. then we could able to see it.
 * under the hood, while snag creates loop if the condition is true
 * to create intentional infinite loops, use 'true' or ';;' in while condition.
+* while decrementing loop variable, make sure that the condition too aligned with it properly.
+  note: dec should not cross 0 and inc should not cross target.
 
 
 

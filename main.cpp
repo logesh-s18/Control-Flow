@@ -22,49 +22,40 @@ using namespace std;
 
 
 
-int main() 
+int main()
 {
 
-    int outer{ 1 };
+	int outer{1};
 
-    while (outer <= 5)
-    {
-       
-        //total rows
-        int totalRows = 5;
+	while (outer <= 5)
+	{
 
-        int inner{ (totalRows + 1) - outer}; 
+		int inner{1};
 
-        if (inner == 0)
-            std::cout << inner-- << '0';
+		while (inner <= outer)
+		{
+			cout << inner++ << ' ';
+		}
 
-        while (inner > 0)
-        {
-            std::cout << inner-- << ' '; 
-        }
+		cout << '\n';
 
-        
-
-        std::cout << '\n';
-
-        ++outer;
-    }
+		++outer;
+	}
 
 
 	return 0;
 }
-
 
 /*
 
 
 Output:
 
-5 4 3 2 1
-4 3 2 1
-3 2 1
-2 1
 1
+1 2
+1 2 3
+1 2 3 4
+1 2 3 4 5
 
 
 */
