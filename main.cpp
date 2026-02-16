@@ -1,37 +1,34 @@
-
-
-#include <iostream>
-
+#include<iostream>
 using namespace std;
 
-
 int main()
+
 {
 
-	int rows{ 1 };
+	int row{1}; 
 
-	while (rows <= 5)
+
+	while (row <=5) // the Clock of iteration
 	{
+		int col{ 5 }; 
+		
 
-		int cols{ 5 };
-
-		while (cols > 0) 
+		while (col > 0) //the Scanner of column positions
 		{
+			if (col <= row) // the Filter
+				cout << col << " ";
+			else
+				cout << " " << " ";
 
-			if (cols > rows)
-				cout << " " << ' ';
-			else 
-				cout << cols << ' ';
-
-			--cols; 
+			--col;
 
 		}
 
 		cout << '\n';
 
-		++rows;
+		++row;
 	}
+
 
 	return 0;
 }
-
