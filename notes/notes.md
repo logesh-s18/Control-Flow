@@ -374,6 +374,9 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 * all labels consider the fallthrough until a break or any exit statements interfer
 
 
+# * Findings from Hands-on*  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* you can even call a function as a label which is to retuning integral value as compile time constand (constexpr)
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
