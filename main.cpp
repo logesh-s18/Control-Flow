@@ -6,20 +6,29 @@ void start() { std::cout << "Starting...\n"; }
 void stop() { std::cout << "Stopping...\n"; }
 
 int main() {
-    // A manual jump table using function pointers
-    void (*jumpTable[])() = { reset, start, stop };
+  
 
-    int cmd = 1;
+    int x = 2;
 
-    //uncomment & comment, watch the behavior of how it changes to function address and variables
-    
-    //int reset = 1;
-    //int start = 1;
-    //int stop = 1;
 
-    // Direct O(1) access: no "if" or "switch" needed!
-    if (cmd >= 0 && cmd <= 2) {
-        jumpTable[cmd]();
+    switch (x)
+    {
+    case 1:
+    case 2:
+    case 4:
+    case 5:
+    case 7:
+        std::cout << "Hi....\n";
+
+    default:
+        std::cout << "Nothing....";
+
+
+        //Hi....
+        //Nothing....
+        //both will be printed in the side effect of fallthtough
+
+
     }
 
     return 0;

@@ -371,6 +371,7 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
   after the end of the switch block. This allows us to exit a switch-statement without exiting the entire function.
 *  switch labels with indentation makes code complex in readability. Prefer not to indent labels. 
 * Prefer a switch-statement over if-else statements when testing a single expression (with a non-boolean integral type or an enumerated type) for equality against a small set of values.
+* all labels consider the fallthrough until a break or any exit statements interfer
 
 
 
