@@ -438,7 +438,14 @@ Why it's called a "Dumb Shredder"???: It is considered "dumb" because it does no
 		}
 
 
+# * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* we can create manual jump tables with Function pointers which directly jumps to function's address. FUNCTION HAS ADDRESS!!!.
+
+	eg: 
+		// A manual jump table using function pointers
+
+           void (*jumpTable[])() = { reset, start, stop }; // array of functions
 
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------

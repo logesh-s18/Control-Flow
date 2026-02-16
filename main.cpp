@@ -1,34 +1,26 @@
-#include<iostream>
-using namespace std;
+#include <iostream>
+#include <vector>
 
-int main()
+void reset() { std::cout << "Resetting...\n"; }
+void start() { std::cout << "Starting...\n"; }
+void stop() { std::cout << "Stopping...\n"; }
 
-{
+int main() {
+    // A manual jump table using function pointers
+    void (*jumpTable[])() = { reset, start, stop };
 
-	int row{1}; 
+    int cmd = 1;
 
+    //uncomment & comment, watch the behavior of how it changes to function address and variables
+    
+    //int reset = 1;
+    //int start = 1;
+    //int stop = 1;
 
-	while (row <=5) // the Clock of iteration
-	{
-		int col{ 5 }; 
-		
+    // Direct O(1) access: no "if" or "switch" needed!
+    if (cmd >= 0 && cmd <= 2) {
+        jumpTable[cmd]();
+    }
 
-		while (col > 0) //the Scanner of column positions
-		{
-			if (col <= row) // the Filter
-				cout << col << " ";
-			else
-				cout << " " << " ";
-
-			--col;
-
-		}
-
-		cout << '\n';
-
-		++row;
-	}
-
-
-	return 0;
+    return 0;
 }
