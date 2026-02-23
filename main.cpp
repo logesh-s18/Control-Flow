@@ -14,7 +14,7 @@ constexpr int giveSomeNumber()
 int main() {
 
 
-    int selection{}; // remember : value initialized to 0
+    int selection{}; // remember : value initialized to 0; What if 0 was a valid choice?  We’d have to pick a different initializer to represent “invalid” 
 
     while (selection < 1 || selection > 4)
     {
