@@ -843,6 +843,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 * we can able to mimic while loop same as do while loop, but it requires an initial check before the loop to run at least once. 
   but do while loop is more concise and readable for this use case. it doesn't require an initial check before the loop to run at least once.
+* however, both while and  do while loops needs initialization of loop variable and inc/dec operator to avoid infinite looping.
 
 
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
