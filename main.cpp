@@ -14,29 +14,24 @@ constexpr int giveSomeNumber()
 int main() {
 
 
-	int x = 5;
+    int selection{}; // value initialized to 0
+
+    while (selection < 1 || selection > 4)
+    {
+        std::cout << "Please make a selection: \n";
+        std::cout << "1) Addition\n";
+        std::cout << "2) Subtraction\n";
+        std::cout << "3) Multiplication\n";
+        std::cout << "4) Division\n";
+        std::cin >> selection;
+    }
+
+    // do something with selection here
+    // such as a switch statement
+
+    std::cout << "You selected option #" << selection << '\n';
+
+    return 0;
 
 
-	switch (x)
-	{
-	case 1:break;
-	case 2:break;
-	case 4: break;
-	case giveSomeNumber():
-		std::cout << "giveSomeNumber executed....\n";
-		break;
-
-	case 7:
-		std::cout << "Hi....\n";
-		break;
-	default:
-		std::cout << "Nothing....";
-		break;
-
-		
-
-
-	}
-
-	return 0;
 }
