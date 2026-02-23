@@ -14,16 +14,19 @@ constexpr int giveSomeNumber()
 int main() {
 
 
-    int selection{}; // remember : value initialized to 0; What if 0 was a valid choice?  We’d have to pick a different initializer to represent “invalid” 
+    int selection{};
+    bool invalid{ true }; // new variable just to gate the loop
 
-    while (selection < 1 || selection > 4)
+    while (invalid)
     {
         std::cout << "Please make a selection: \n";
         std::cout << "1) Addition\n";
         std::cout << "2) Subtraction\n";
         std::cout << "3) Multiplication\n";
         std::cout << "4) Division\n";
+
         std::cin >> selection;
+        invalid = (selection < 1 || selection > 4); //represents the boolean
     }
 
     // do something with selection here
