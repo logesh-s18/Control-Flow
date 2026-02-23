@@ -1,33 +1,22 @@
 #include <iostream>
-#include <vector>
 
-void reset() { std::cout << "Resetting...\n"; }
-void start() { std::cout << "Starting...\n"; }
-void stop() { std::cout << "Stopping...\n"; }
-
-constexpr int giveSomeNumber()
-{
-	//std::cout << "giveSomeNumber executed....\n";
-	return 5;
-}
 
 int main() {
 
 
+    // selection must be declared outside of the do-while-loop, so we can use it later
     int selection{};
-    bool invalid{ true }; // new variable just to gate the loop
 
-    while (invalid)
+    do
     {
+        int selection{};
         std::cout << "Please make a selection: \n";
         std::cout << "1) Addition\n";
         std::cout << "2) Subtraction\n";
         std::cout << "3) Multiplication\n";
         std::cout << "4) Division\n";
-
         std::cin >> selection;
-        invalid = (selection < 1 || selection > 4); //represents the boolean
-    }
+    } while (selection < 1 || selection > 4);
 
     // do something with selection here
     // such as a switch statement
