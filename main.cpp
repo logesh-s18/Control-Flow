@@ -14,7 +14,7 @@ constexpr int giveSomeNumber()
 int main() {
 
 
-    int selection{}; // value initialized to 0
+    int selection{}; // remember : value initialized to 0
 
     while (selection < 1 || selection > 4)
     {
