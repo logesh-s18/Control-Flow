@@ -911,6 +911,10 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
   logic by looking at the for loop header without needing to read the entire loop body.
 
 
+* for & while are entry control loops, meaning they check the condition before executing the loop body. 
+* do-while is an exit control loop, meaning it executes the loop body at least once before checking the condition.
+
+
 
 
 # Best Practices
