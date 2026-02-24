@@ -4,18 +4,14 @@
 int main() {
 
 
-	int selection{};
-	
-	
-	int i = 0;
+    for (int i{ 1 }; i <= 10; ++i)
+    {
+        std::cout << i << ' ';
 
-	
+    }
+    std::cout << '\n';
 
-	for (  ; i < 5; )
-	{
-		std::cout << "Please enter a number between 1 and 5: \n";
-		i++;
-	}
+    return 0;
 
-	std::cout << "you have entered: " << selection << std::endl;
+
 }
