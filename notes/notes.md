@@ -822,6 +822,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 * you can use == to compare a char with its ASCII value too
 * you can duplicate many return in same function scope but remaing will be dead code
+* 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -848,6 +849,63 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* we can avoid both magic numbers and additional variables by using a do-while loop, which guarantees that the loop body executes at least once before the condition is checked. 
+  This allows us to initialize our loop variable directly within the loop and use it in the condition without needing a separate initialization step.
+
+
+
+
+# Best Practices
+
+* 
+
+
+# * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+# * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+*
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------
+																			 |
+### 8.10 — For statements                            						 |
+																			 |
+------------------------------------------------------------------------------
+
+
+### Project Logic Overview
+
+
+
+# Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Syntax of for loop is more concise and readable for the use case where we have a clear initialization, condition, and increment/decrement pattern. 
+  It allows us to keep all loop-related logic in one place, making it easier to understand the loop's behavior at a glance.
+
+			for (init-statement; condition; end-expression) 
+			{
+				// loop body (the statement mentioned in your text)
+			}
+
+
+## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* For loop is The "While-Loop" Equivalent. because, init only run once, condition check happens before each iteration, and inc/dec happens at the end of each iteration. 
+  So, we can easily convert a while loop into a for loop by moving the initialization and increment/decrement into the appropriate sections of the for loop syntax.
+
 
 * 
 

@@ -5,17 +5,14 @@ int main() {
 
 
 	int selection{};
-
-	do
+	
+	
+	int i = 0;
+	for (  ; i < 5; i++; )
 	{
-		std::cout << "Please make a selection: " << std::endl;
-		std::cout << "1) Addition " << std::endl;
-		std::cout << "2) Subtraction " << std::endl;
-		std::cout << "3) Multiplication " << std::endl;
-		std::cout << "4) Division " << std::endl;
-
-		std::cin >> selection;
-	} while (selection < 1 || selection > 4);
+		std::cout << "Please enter a number between 1 and 5: \n";
+		
+	}
 
 	std::cout << "you have entered: " << selection << std::endl;
 }
