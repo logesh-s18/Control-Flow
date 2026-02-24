@@ -948,4 +948,3 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 
 * for loop's loop variable is only in scope within the its loop body.
->>>>>>> 432773b7e4878381aef34d75df9fb8193071cae6
