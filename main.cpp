@@ -4,6 +4,7 @@
 int main() {
 
 
+<<<<<<< HEAD
 	int selection{};
 <<<<<<< HEAD
 	
@@ -23,6 +24,17 @@ int main() {
 
 		std::cin >> selection;
 	} while (selection < 1 || selection > 4);
+=======
+	for (int i{ 1 }; i < 10 && !(i > 10); i+=4) 
+    {
+        std::cout << i << ' ';
 
-	std::cout << "you have entered: " << selection << std::endl;
+    }
+
+    std::cout << '\n';
+
+    return 0;
+
+>>>>>>> 432773b7e4878381aef34d75df9fb8193071cae6
+
 }

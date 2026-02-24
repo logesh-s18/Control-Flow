@@ -869,3 +869,83 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 
 *
+<<<<<<< HEAD
+=======
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------
+																			 |
+### 8.10 — For statements                            						 |
+																			 |
+------------------------------------------------------------------------------
+
+
+### Project Logic Overview
+
+
+
+# Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+* Syntax of for loop is more concise and readable for the use case where we have a clear initialization, condition, and increment/decrement pattern. 
+  It allows us to keep all loop-related logic in one place, making it easier to understand the loop's behavior at a glance.
+
+			for (init-statement; condition; end-expression) 
+			{
+				// loop body (the statement mentioned in your text)
+			}
+
+
+*  'i' loop variable in for loop will be out of scope after the loop ends, but 'i' in while loop will be in scope after the loop ends. 
+   This is because the initialization of 'i' in a for loop is part of the for statement itself, which creates a new scope for 'i'. 
+   In contrast, if you declare 'i' before a while loop, it remains in the same scope as the while loop and is accessible after the loop finishes.
+   because, its will be in its function scope, 
+   but in for loop, its will be in for loop scope which is only for that loop body. so, after the loop ends, it will be out of scope.
+	
+
+
+
+* 
+
+
+## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* For loop is The "While-Loop" Equivalent. because, init only run once, condition check happens before each iteration, and inc/dec happens at the end of each iteration. 
+  So, we can easily convert a while loop into a for loop by moving the initialization and increment/decrement into the appropriate sections of the for loop syntax.
+
+
+* For loop is for compact design. its init is out of loop scope, but condition and inc/dec are in loop scope. so, we can easily understand the loop
+  logic by looking at the for loop header without needing to read the entire loop body.
+
+
+* for & while are entry control loops, meaning they check the condition before executing the loop body. 
+* do-while is an exit control loop, meaning it executes the loop body at least once before checking the condition.
+
+
+
+
+# Best Practices
+
+* use for loops when you have a clear initialization, condition, and increment/decrement pattern.
+  It keeps all loop-related logic in one place, making it easier to understand the loop's behavior at a glance.
+* prefer < or <> over !=, because, it might jump if the loop variable inc/dec which causing bypass of logic risk. 
+  for eg: if we use !=, and the loop variable is incrementing, it might skip the target value and cause an infinite loop. 
+  but if we use < or >, it will not cause an infinite loop even if it skips the target value, because the condition will eventually become false.
+
+
+# * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+# * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+* for loop's loop variable is only in scope within the its loop body.
+>>>>>>> 432773b7e4878381aef34d75df9fb8193071cae6
