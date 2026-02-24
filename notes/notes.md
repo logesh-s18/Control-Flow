@@ -907,14 +907,16 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
   So, we can easily convert a while loop into a for loop by moving the initialization and increment/decrement into the appropriate sections of the for loop syntax.
 
 
-* 
+* For loop is for compact design. its init is out of loop scope, but condition and inc/dec are in loop scope. so, we can easily understand the loop
+  logic by looking at the for loop header without needing to read the entire loop body.
 
 
 
 
 # Best Practices
 
-* 
+* use for loops when you have a clear initialization, condition, and increment/decrement pattern.
+  It keeps all loop-related logic in one place, making it easier to understand the loop's behavior at a glance.
 
 
 # * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
