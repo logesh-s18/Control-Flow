@@ -4,7 +4,7 @@
 int main() {
 
 
-	for (int i{ 1 }; i != 10; i+=4) 
+	for (int i{ 1 }; i < 10 && !(i > 10); i+=4) 
     {
         std::cout << i << ' ';
 
