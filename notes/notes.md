@@ -901,6 +901,18 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 			}
 
 
+*  'i' loop variable in for loop will be out of scope after the loop ends, but 'i' in while loop will be in scope after the loop ends. 
+   This is because the initialization of 'i' in a for loop is part of the for statement itself, which creates a new scope for 'i'. 
+   In contrast, if you declare 'i' before a while loop, it remains in the same scope as the while loop and is accessible after the loop finishes.
+   because, its will be in its function scope, 
+   but in for loop, its will be in for loop scope which is only for that loop body. so, after the loop ends, it will be out of scope.
+	
+
+
+
+* 
+
+
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
 * For loop is The "While-Loop" Equivalent. because, init only run once, condition check happens before each iteration, and inc/dec happens at the end of each iteration. 
@@ -921,6 +933,9 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 * use for loops when you have a clear initialization, condition, and increment/decrement pattern.
   It keeps all loop-related logic in one place, making it easier to understand the loop's behavior at a glance.
+* prefer < or <> over !=, because, it might jump if the loop variable inc/dec which causing bypass of logic risk. 
+  for eg: if we use !=, and the loop variable is incrementing, it might skip the target value and cause an infinite loop. 
+  but if we use < or >, it will not cause an infinite loop even if it skips the target value, because the condition will eventually become false.
 
 
 # * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -932,4 +947,4 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 # * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-*
+* for loop's loop variable is only in scope within the its loop body.
