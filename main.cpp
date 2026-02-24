@@ -9,9 +9,9 @@ int main() {
 	
 	int i = 0;
 
-	bool isTrue = i < 5;
+	
 
-	for (  ; isTrue; )
+	for (  ; i < 5; )
 	{
 		std::cout << "Please enter a number between 1 and 5: \n";
 		i++;
