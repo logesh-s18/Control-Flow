@@ -910,7 +910,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 			1.It executes the expressions from left to right.
 			2.It discards the results of the left-side expressions.
 			3.The rightmost value becomes the result of the entire expression.
-  RSD = Right Side Dominance
+  works as RSD = Right Side Dominance
 
 
 * Syntax of for loop is more concise and readable for the use case where we have a clear initialization, condition, and increment/decrement pattern. 
