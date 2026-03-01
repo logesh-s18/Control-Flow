@@ -922,7 +922,30 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 
 
-* 
+* The Real-Time Sample
+
+Let's look at the example of printing numbers from 1 to 10.
+The for loop approach:
+                         for (int i = 1; i <= 10; ++i) 
+                               {
+                                std::cout << i << ' ';
+                               }
+
+// 'i' no longer exists here. It is safely destroyed.
+In this snippet, everything controlling the loop is explicitly tied together. i is created, tested, and modified all in one place.
+The while loop equivalent: To achieve the exact same safe scope using a while loop, you cannot just write a standard while loop. 
+
+You have to artificially wrap it in extra brackets just to kill the variable when it finishes:
+
+				{ // Notice these extra outer braces? They are required to copy the for-loop's scope behavior.
+					int i = 1; 
+					while (i <= 10) {
+						std::cout << i << ' ';
+						++i; // If you have a long block of code here, it's easy to forget this line!
+					}
+				} // 'i' is finally destroyed here.
+
+
 
 
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
