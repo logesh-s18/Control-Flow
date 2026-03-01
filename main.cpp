@@ -2,9 +2,15 @@
 
 int main()
 {
-    for (int x{ 0 }, y{ 2 }; x < 10; ++x, --y)
-        std::cout << x << ' ' << y << '\n';
+	for (char c{ 'a' }; c <= 'e'; ++c) // outer loop on letters
+	{
+		std::cout << c; // print our letter first
 
-    return 0;
+		for (int i{ 0 }; i < 3; ++i) // inner loop on all numbers
+			std::cout << i;
 
+		std::cout << '\n';
+	}
+
+	return 0;
 }
