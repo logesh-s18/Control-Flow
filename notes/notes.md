@@ -904,6 +904,15 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 # Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+* REMEMBER!!! comma separated operators behavior? it will execute from L -> R and the most last right value will be the result of whole expression.
+  thats what happen when you use multiple loop variables in for loop condition which was separated by comma operator.
+
+			1.It executes the expressions from left to right.
+			2.It discards the results of the left-side expressions.
+			3.The rightmost value becomes the result of the entire expression.
+  RSD = Right Side Dominance
+
+
 * Syntax of for loop is more concise and readable for the use case where we have a clear initialization, condition, and increment/decrement pattern. 
   It allows us to keep all loop-related logic in one place, making it easier to understand the loop's behavior at a glance.
 
