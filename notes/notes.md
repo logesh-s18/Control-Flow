@@ -973,11 +973,6 @@ You have to artificially wrap it in extra brackets just to kill the variable whe
 
 
 
-* infinite loop can be created with for loop by omitting the condition, which is equivalent to while (true).									
-	for (;;)
-     statement;
-
-
 
 # Best Practices
 
