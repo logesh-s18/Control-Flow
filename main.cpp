@@ -3,8 +3,8 @@
 
 int main() {
 
-    for (int x{ 0 }, y{ 9 }, c{23}; x < 10, y >= 0, c > 0; ++x, --y, c--)
-        std::cout << x << ' ' << y << ' ' << c << '\n';
+    for (int x{ 0 }, y{ 9 }; x < 10, y >= 0; ++x, --y)
+        std::cout << x << ' ' << y << '\n';
 
     return 0;
 
