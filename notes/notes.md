@@ -969,6 +969,7 @@ You have to artificially wrap it in extra brackets just to kill the variable whe
 
 * for & while are entry control loops, meaning they check the condition before executing the loop body. 
 * do-while is an exit control loop, meaning it executes the loop body at least once before checking the condition.
+* init will only run one time and dont get confused with multiple loop variables while using it inside.
 
 
 
