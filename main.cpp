@@ -22,7 +22,7 @@ int main() {
         if (i == 9) ++i; // jump over value 10
     }
 
-    for (int i{ 0 }; i != 10; ++i) // uses !=, infinite loop
+    for (int i{ 0 }; i != 10; i++) // uses !=, infinite loop
     {
         std::cout << i;
         if (i == 9) ++i; // jump over value 10
