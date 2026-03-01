@@ -1,18 +1,14 @@
 #include <iostream>
 
-
-
-int main() {
-
-    int i{ 0 };
-    for (; i < 10; ) // no init-statement or end-expression
+int main()
+{
+    // oops, we used operator< instead of operator<=
+    for (int i{ 1 }; i < 5; ++i)
     {
         std::cout << i << ' ';
-        ++i;
     }
 
     std::cout << '\n';
 
     return 0;
-
 }
