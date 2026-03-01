@@ -2,13 +2,9 @@
 
 int main()
 {
-    // oops, we used operator< instead of operator<=
-    for (int i{ 1 }; i < 5; ++i)
-    {
-        std::cout << i << ' ';
-    }
-
-    std::cout << '\n';
+    for (int x{ 0 }, y{ 2 }; x < 10; ++x, --y)
+        std::cout << x << ' ' << y << '\n';
 
     return 0;
+
 }
