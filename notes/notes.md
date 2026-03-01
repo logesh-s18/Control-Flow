@@ -977,6 +977,8 @@ You have to artificially wrap it in extra brackets just to kill the variable whe
 	for (;;)
      statement;
 
+This might be a little unexpected, as you’d probably expect an omitted condition-expression to be treated as false. 
+However, the C++ standard explicitly (and inconsistently) defines that an omitted condition-expression in a for-loop should be treated as true.
 
 
 # Best Practices
