@@ -904,6 +904,8 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 
 # Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
 
+* for loop = 2 scopes — it creates its own header scope so the loop variable lives and dies with the loop. while and do-while = 1 scope — they borrow the variable from outside, so it outlives the loop.
+
 * REMEMBER!!! comma separated operators behavior? it will execute from L -> R and the most last right value will be the result of whole expression.
   thats what happen when you use multiple loop variables in for loop condition which was separated by comma operator.
 
@@ -1023,7 +1025,34 @@ for (int i = 0; i < 5; i++) {
 # * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
+C++ Loop Scopes — Quick Notes
 
+1. for loop — has 2 scopes
+
+Header scope: holds init, condition, update
+Body scope: nested inside header scope
+Loop variable dies when loop ends
+Only loop with its own header scope
+
+2. while loop — has 1 scope
+
+Body scope only
+No header scope
+Loop variable must be in outer scope
+Stays alive after loop ends
+
+3. do-while loop — has 1 scope
+
+Body scope only
+No header scope
+Same as while — variable lives in outer scope
+Stays alive after loop ends
+
+
+Key Rules:
+
+A variable is visible everywhere within the scope it's declared in, including any inner (nested) scopes
+A variable is not visible outside the scope it's declared in
 
 
 # * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
