@@ -15,7 +15,7 @@ int main()
 
 			cout << i;
 
-			x++;
+			x++; // Delegating the Outer Loop's Update to the Inner Loop
 		}
 
 		cout << '\n';
