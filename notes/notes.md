@@ -981,13 +981,34 @@ This might be a little unexpected, as you’d probably expect an omitted conditi
 However, the C++ standard explicitly (and inconsistently) defines that an omitted condition-expression in a for-loop should be treated as true.
 
 
-// for loop header update — always body ku AFTER
+FOR LOOP HEADER SCOPE
+
 for (int i = 0; i < 5; i++) {
     // step 1
     // step 2
     // step 3
-    //              ← i++ runs HERE, after everything
 }
+//  ↑ body mudiyum
+//  ↑ then jumps BACK UP to header
+//  ↑ i++ runs in HEADER, not here
+```
+
+**Correct flow:**
+```
+        ┌──────────────────────────────┐
+        │  int i = 0  (once)           │
+        │         ↓                    │
+   ┌──→ │  i < 5 ? ──── false ──→ END │
+   │    │    ↓ true                    │
+   │    │  ┌──────────────────┐        │
+   │    │  │ BODY             │        │
+   │    │  │  step 1          │        │
+   │    │  │  step 2          │        │
+   │    │  │  step 3          │        │
+   │    │  └──────────────────┘        │
+   │    │    ↓                         │
+   └──── │  i++  ← runs HERE in header │
+        └──────────────────────────────┘
 
 
 # Best Practices
