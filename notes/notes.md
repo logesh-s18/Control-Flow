@@ -1058,4 +1058,12 @@ A variable is not visible outside the scope it's declared in
 # * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-* for loop's loop variable is only in scope within the its loop body.
+* for loop's loop variable is only in scope within the its loop body
+* for loop has  scopes, "header" then "body"
+
+
+
+
+
+
+
