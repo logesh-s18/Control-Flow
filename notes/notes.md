@@ -981,6 +981,15 @@ This might be a little unexpected, as you’d probably expect an omitted conditi
 However, the C++ standard explicitly (and inconsistently) defines that an omitted condition-expression in a for-loop should be treated as true.
 
 
+// for loop header update — always body ku AFTER
+for (int i = 0; i < 5; i++) {
+    // step 1
+    // step 2
+    // step 3
+    //              ← i++ runs HERE, after everything
+}
+
+
 # Best Practices
 
 * use for loops when you have a clear initialization, condition, and increment/decrement pattern.
