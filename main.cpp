@@ -2,18 +2,15 @@
 
 
 
-Question #2
+Question #4
 
-Write a function named sumTo() that takes an integer parameter named value, and returns the sum of all the numbers from 1 to value.
+Fizz Buzz is a simple math game used to teach children about divisibility. It is also sometimes used as an interview question to assess basic programming skills.
 
-For example, sumTo(5) should return 15, which is 1 + 2 + 3 + 4 + 5.
+The rules of the game are simple: Starting at 1, and counting upward, replace any number divisible only by three with the word “fizz”, any number only divisible by five with the word “buzz”, and any number divisible by both 3 and 5 with the word “fizzbuzz”.
 
+Implement this game inside a function named fizzbuzz() that takes a parameter determining what number to count up to. Use a for-loop and a single if-else chain (meaning you can use as many else-if as you like).
 
-
-Hint: 
-
-Use a non-loop variable to accumulate the sum as you iterate from 1 to the input value, 
-much like the pow() example above uses the total variable to accumulate the return value each iteration.
+The output of fizzbuzz(15) should match the following:
 
 
 
@@ -29,23 +26,27 @@ using namespace std;
 
 
 
-void sumTo(int value)
+void fizzbuzz(int value)
 {
-	//initial total will be 0, and if the user gives '0' it doesnt enters the loop, and returns '0'
-	int total = 0;
-
-
-
-	//init from 1 bcz thats the possible start of adding the values
 	for (int i = 1; i <= value; ++i)
 	{
 
-		total += i; //total saves the iteration value and adding the next time and the condition based on start anyways in 1 + 2 + .... n. so its ok.
-
+		if (i%3 == 0 && i%5 == 0)
+		{
+			cout << "fizzbuzz" << '\n';
+		}
+		else if (i % 3 == 0)
+		{
+			cout << "fizz" << '\n';
+		}
+		else if (i % 5 == 0)
+		{
+			cout << "buzz" << '\n';
+		}
+		else
+			cout << i << '\n';
 
 	}
-
-	cout << "and the Total : " << total ;
 
 
 }
@@ -54,13 +55,13 @@ void sumTo(int value)
 int main()
 {
 	// getting the value from user
-	cout << "Please enter the value you want to sum up : ";
+	cout << "To play FIZZBUZZ, Please enter your value : ";
 
 	int value;
 
 	cin >> value;
 
-	sumTo(value);
+	fizzbuzz(value);
 
 
 	return 0;
