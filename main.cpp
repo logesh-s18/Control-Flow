@@ -30,8 +30,14 @@ void fizzbuzz(int value)
 {
 	for (int i = 1; i <= value; ++i)
 	{
+		bool check1 = (i % 3 == 0 && i % 5 == 0 && i % 7); //false
+		bool check2 = (i % 3 == 0 && i % 5 == 0 && i % 7==0); //true
 
-		if (i%3 == 0 && i%5 == 0) // check this 1st inorder to avoid missing it
+		if (i % 3 == 0 && i % 5 == 0 && i % 7==0) // Majority of condition checks should be 1st
+		{
+			cout << "fizzbuzzpop" << '\n';
+		}
+		else if (i%3 == 0 && i%5 == 0) 
 		{
 			cout << "fizzbuzz" << '\n';
 		}
@@ -42,6 +48,10 @@ void fizzbuzz(int value)
 		else if (i % 5 == 0)
 		{
 			cout << "buzz" << '\n';
+		}
+		else if (i % 7 == 0)
+		{
+			cout << "pop" << '\n';
 		}
 		else
 			cout << i << '\n';
