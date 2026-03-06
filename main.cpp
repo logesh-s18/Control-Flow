@@ -31,7 +31,7 @@ void fizzbuzz(int value)
 	for (int i = 1; i <= value; ++i)
 	{
 
-		if (i%3 == 0 && i%5 == 0)
+		if (i%3 == 0 && i%5 == 0) // check this 1st inorder to avoid missing it
 		{
 			cout << "fizzbuzz" << '\n';
 		}
