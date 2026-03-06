@@ -961,6 +961,10 @@ You have to artificially wrap it in extra brackets just to kill the variable whe
 
 ## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
 
+* For loop's update expression runs after the body finishes, but execution jumps BACK UP to the header to run it — not after the }.
+  The for loop's update expression executes after the body completes, by jumping back to the header — it lives in the header scope, not the body scope.
+
+
 * For loop is The "While-Loop" Equivalent. because, init only run once, condition check happens before each iteration, and inc/dec happens at the end of each iteration. 
   So, we can easily convert a while loop into a for loop by moving the initialization and increment/decrement into the appropriate sections of the for loop syntax.
 
@@ -975,7 +979,8 @@ You have to artificially wrap it in extra brackets just to kill the variable whe
 
 
 
-* infinite loop can be created with for loop by omitting the condition, which is equivalent to while (true).									
+* infinite loop can be created with for loop by omitting the condition, which is equivalent to while (true).
+									
 	for (;;)
      statement;
 
