@@ -24,7 +24,33 @@ The output of fizzbuzz(15) should match the following:
 using namespace std;
 
 
-
+//void fizzbuzz(int count)
+//{
+//	for (int i{ 1 }; i <= count; ++i)
+//	{
+//		bool printed{ false };
+//		if (i % 3 == 0)
+//		{
+//			std::cout << "fizz";
+//			printed = true;
+//		}
+//		if (i % 5 == 0)
+//		{
+//			std::cout << "buzz";
+//			printed = true;
+//		}
+//		if (i % 7 == 0)
+//		{
+//			std::cout << "pop";
+//			printed = true;
+//		}
+//
+//		if (!printed)
+//			std::cout << i;
+//
+//		std::cout << '\n';
+//	} // end for loop
+//}
 
 void fizzbuzz(int value)
 {
@@ -64,6 +90,23 @@ void fizzbuzz(int value)
 
 int main()
 {
+
+	int num = 0;
+
+	for (int i = 0; i < 4; ++i)
+
+	{
+		cout << num;
+
+		//num = 100;
+
+		++num;
+
+		cout << num;
+
+
+	}
+
 	// getting the value from user
 	cout << "To play FIZZBUZZ, Please enter your value : ";
 
