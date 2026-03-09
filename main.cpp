@@ -22,11 +22,11 @@ void fizzbuzz(int count)
 			printed = true;
 		}
 
-		if (i % 7 == 0)
-		{
-			cout << "pop";
-			printed = true;
-		}
+		//if (i % 7 == 0)
+		//{
+		//	cout << "pop";
+		//	printed = true;
+		//}
 
 		if (!printed)
 		{
