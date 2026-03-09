@@ -1067,6 +1067,16 @@ A variable is not visible outside the scope it's declared in
 * for loop has  scopes, "header" then "body"
 
 
+* inside for loop, 
+
+		When to use if/else if chains: 
+		You use this when only one outcome is mathematically possible (mutually exclusive)
+		Because only one condition can be true, the program can efficiently skip the rest of the checks as soon as it finds the correct one
+
+		When to use independent if statements: 
+		You use this when your logic accommodates multiple conditions being true at the same time (like a number being divisible by 3, 5, and 7)
+
+
 
 
 

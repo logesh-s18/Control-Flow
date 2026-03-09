@@ -1,121 +1,45 @@
-/*
-
-
-
-Question #4
-
-Fizz Buzz is a simple math game used to teach children about divisibility. It is also sometimes used as an interview question to assess basic programming skills.
-
-The rules of the game are simple: Starting at 1, and counting upward, replace any number divisible only by three with the word “fizz”, any number only divisible by five with the word “buzz”, and any number divisible by both 3 and 5 with the word “fizzbuzz”.
-
-Implement this game inside a function named fizzbuzz() that takes a parameter determining what number to count up to. Use a for-loop and a single if-else chain (meaning you can use as many else-if as you like).
-
-The output of fizzbuzz(15) should match the following:
-
-
-
-*/
-
-
-
 
 #include <iostream>
-
 using namespace std;
 
 
-//void fizzbuzz(int count)
-//{
-//	for (int i{ 1 }; i <= count; ++i)
-//	{
-//		bool printed{ false };
-//		if (i % 3 == 0)
-//		{
-//			std::cout << "fizz";
-//			printed = true;
-//		}
-//		if (i % 5 == 0)
-//		{
-//			std::cout << "buzz";
-//			printed = true;
-//		}
-//		if (i % 7 == 0)
-//		{
-//			std::cout << "pop";
-//			printed = true;
-//		}
-//
-//		if (!printed)
-//			std::cout << i;
-//
-//		std::cout << '\n';
-//	} // end for loop
-//}
-
-void fizzbuzz(int value)
+void fizzbuzz(int count)
 {
-	for (int i = 1; i <= value; ++i)
+	for (int i = 1; i <= count; ++i)
 	{
-		bool check1 = (i % 3 == 0 && i % 5 == 0 && i % 7); //false
-		bool check2 = (i % 3 == 0 && i % 5 == 0 && i % 7==0); //true
 
-		if (i % 3 == 0 && i % 5 == 0 && i % 7==0) // Majority of condition checks should be 1st
-		{
-			cout << "fizzbuzzpop" << '\n';
-		}
-		else if (i%3 == 0 && i%5 == 0) 
-		{
-			cout << "fizzbuzz" << '\n';
-		}
-		else if (i % 3 == 0)
-		{
-			cout << "fizz" << '\n';
-		}
-		else if (i % 5 == 0)
-		{
-			cout << "buzz" << '\n';
-		}
-		else if (i % 7 == 0)
-		{
-			cout << "pop" << '\n';
-		}
-		else
-			cout << i << '\n';
+		bool printed{false};
 
+		if (i % 3 == 0)
+		{
+			cout << "fizz";
+			printed = true;
+		}
+
+		if (i % 5 == 0)
+		{
+			cout << "buzz";
+			printed = true;
+		}
+
+		if (i % 7 == 0)
+		{
+			cout << "pop";
+			printed = true;
+		}
+
+		if (!printed)
+		{
+			cout << i;
+		}
+
+		cout << '\n';
 	}
-
-
 }
-
 
 int main()
 {
-
-	int num = 0;
-
-	for (int i = 0; i < 4; ++i)
-
-	{
-		cout << num;
-
-		//num = 100;
-
-		++num;
-
-		cout << num;
-
-
-	}
-
-	// getting the value from user
-	cout << "To play FIZZBUZZ, Please enter your value : ";
-
-	int value;
-
-	cin >> value;
-
-	fizzbuzz(value);
-
+	fizzbuzz(150);
 
 	return 0;
 }
