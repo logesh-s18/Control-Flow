@@ -1,45 +1,58 @@
-
 #include <iostream>
 using namespace std;
 
 
-void fizzbuzz(int count)
+
+void fizzbuzzpop(int value)
 {
-	for (int i = 1; i <= count; ++i)
+	for (int i = 1; i <= value; ++i)
 	{
+		bool flag = false; //flag
 
-		bool printed{false};
 
-		if (i % 3 == 0)
+		//ordewising the conditions based on output to happen sequentially
+		if ( i % 3 == 0)
 		{
 			cout << "fizz";
-			printed = true;
+			flag = true;
 		}
 
-		if (i % 5 == 0)
+		if ( i % 5 == 0)
 		{
 			cout << "buzz";
-			printed = true;
+			flag = true;
 		}
 
-		//if (i % 7 == 0)
-		//{
-		//	cout << "pop";
-		//	printed = true;
-		//}
+		if ( i % 7 == 0)
+		{
+			cout << "pop";
+			flag = true;
+		}
 
-		if (!printed)
+		if (!flag)
 		{
 			cout << i;
 		}
 
 		cout << '\n';
+
 	}
+		
 }
+
+
 
 int main()
 {
-	fizzbuzz(150);
+	cout << "please enter the number :";
+
+
+	int value;
+
+	cin >> value;
+
+	fizzbuzzpop(value);
 
 	return 0;
+
 }
