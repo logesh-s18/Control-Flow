@@ -17,10 +17,6 @@ void fizzbuzzpop(int value)
 			cout << "fizz";
 			flag = true;
 
-			//cout << '\n';
-			//continue; // which means the integer should be divisible by 3 and check the next iteration integer, dont check the below codes
-			//			//for eg: 15 divisible by both 3 & 5, in output you will only see fizz not buzz
-
 		}
 
 		if ( i % 5 == 0)
@@ -41,7 +37,7 @@ void fizzbuzzpop(int value)
 			cout << i;
 		}
 
-		cout << '\n';
+		cout << '\n'; //new line
 
 	}
 		

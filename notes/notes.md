@@ -868,11 +868,6 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 # * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
-*
-<<<<<<< HEAD
-=======
-
-
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -899,7 +894,7 @@ Practice exercises that cover variable scope, printing ASCII characters, and man
 • Nested for-loops: Demonstrates that when placing a loop inside another, the inner loop will execute completely from start to finish for every single iteration of the outer loop.
 • Variables used only inside a loop should be defined inside the loop: Recommends defining loop variables in the smallest scope possible to reduce code complexity and improve potential compiler optimizations.
 • Conclusion: Summarizes that for-loops are the most common loop in C++ and are best used when you have a clear counter variable.
-• Quiz time: Tests your understanding with coding challenges, such as summing numbers, spotting bugs, and creating the "Fizz Buzz" math gam
+• Quiz time: Tests your understanding with coding challenges, such as summing numbers, spotting bugs, and creating the "Fizz Buzz" math game
 
 
 # Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1065,6 +1060,10 @@ A variable is not visible outside the scope it's declared in
 
 * for loop's loop variable is only in scope within the its loop body
 * for loop has  scopes, "header" then "body"
+* comma separator right dominance in condition.
+* be cautious while using operators in condition, using != might skip iterating value validations
+* keep the variable scope locked within scope, larger scope creates complexity to compiler in optimization.
+* for loop can mimic like while, but while cannot be done as for loop syntax as exactly
 
 
 * inside for loop, 
@@ -1077,7 +1076,94 @@ A variable is not visible outside the scope it's declared in
 		You use this when your logic accommodates multiple conditions being true at the same time (like a number being divisible by 3, 5, and 7)
 
 
+* learn to use boolean flags for tracking purposes
 
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+------------------------------------------------------------------------------
+																			 |
+### 8.11 — Break and continue                        						 |
+																			 |
+------------------------------------------------------------------------------
+
+
+### Project Logic Overview
+
+
+
+# Hands-on Doubts cleared: ---------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+## New things I learned ------------------------------------------------------------------------------------------------------------------------------------------------------
+
+* "continue" is for skipping the remaining code below in the loop and will go to update expression
+* "break" will exit the loop
+* "return" will exit the function.
+* use "early return's" to validate the parameters or other validation before starting the core logic of the func so that it will immediately terminate the func if (early) validation has errors.
+* be cautious of using "continue" in while loop, we have risk of skipping the update expression which leds to infinite loop.
+* inverting loop inside if logic with continue will make the core logic to sit flat and not needed to be in if/else. continue skips and moves to next iteration.
+
+* a state variable (often called a "flag") is a variable used to store the status or condition of a process so that other parts of the code can react to it later.
+
+
+
+
+
+
+# Best Practices
+
+* "Shallow Nesting" can be taken place which makes code better readability.
+
+
+XXXX -> Nested with State Variable: XXXX
+
+	Logic: "Check a condition, set a flag, and process it much later."
+
+	Readability: Harder; requires the developer to mentally track variable values.
+
+	Indentation: Deep; the code pushes further and further to the right.
+
+USE Flattened (Zero State):
+
+	Logic: "Check a condition and exit immediately if it is invalid."
+
+	Readability: Easier; the execution path itself confirms the status.
+
+	Indentation: Shallow; the code stays clean and aligned to the left.
+
+
+# * Additional *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+The Benefits of Shallow Nesting
+By focusing on flattening your logic, you achieve several high-level programming benefits:
+
+		Reduced Cognitive Load: The code becomes easier to read because the developer doesn't have to "track" multiple levels of indentation and state in their head.
+
+		Immediate Error Exits: By checking for errors at the very beginning (Guard Clauses) and exiting immediately, you ensure that the "main" logic only runs in a valid state.
+
+		Zero State Variables: Flattening often removes the need for "flag" variables (e.g., bool isError = false;) that are otherwise used to keep track of state across deep nests.
+
+
+
+
+# * Findings *  ------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
+------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 
 
