@@ -1,44 +1,45 @@
 #include <iostream>
+#include <memory>
 using namespace std;
 
-int globalPtr_value = 30;
-int* globalPtr = &globalPtr_value;   // CASE 3 setup
-
-class Wallet {
-public:
-    int* memberPtr;
-    Wallet(int val) { memberPtr = new int(val); }
-    ~Wallet() { delete memberPtr; }
-};
-
 int main() {
-    // CASE 1: int* on stack
-    int a = 10;
-    int* p1 = &a;
-    int** pp1 = &p1;
-    cout << "CASE 1 (stack):   **pp1 = " << **pp1 << endl;
+    cout << "=== RAW POINTER TEST ===" << endl;
 
-    // CASE 2: int* on stack, data on heap
-    int* p2 = new int(20);
-    int** pp2 = &p2;
-    cout << "CASE 2 (heap):    **pp2 = " << **pp2 << endl;
-    delete p2;
+    int* rawAddr = nullptr;   // save address for later inspection
 
-    // CASE 3: int* as global
-    int** pp3 = &globalPtr;
-    cout << "CASE 3 (global):  **pp3 = " << **pp3 << endl;
+    {
+        int* raw = new int(42);
+        rawAddr = raw;         // capture address BEFORE scope ends
 
-    // CASE 4: int* as class member
-    Wallet w(40);
-    int** pp4 = &w.memberPtr;
-    cout << "CASE 4 (class):   **pp4 = " << **pp4 << endl;
+        cout << "Inside scope - raw address: " << raw << endl;
+        cout << "Inside scope - raw value:   " << *raw << endl;
 
-    // CASE 5: Triple pointer
-    int b = 50;
-    int* p5 = &b;
-    int** pp5 = &p5;
-    int*** ppp5 = &pp5;
-    cout << "CASE 5 (triple):  ***ppp5 = " << ***ppp5 << endl;
+        // 🔴 BREAKPOINT 1: here, inspect memory at rawAddr → you'll see 42
+
+    }  // raw pointer goes out of scope — but heap NOT freed!
+
+    // 🔴 BREAKPOINT 2: here, inspect memory at rawAddr → STILL 42 (LEAKED!)
+    cout << "After scope - rawAddr still:  " << rawAddr << endl;
+    cout << "After scope - value still:    " << *rawAddr << endl;  // still works!
+
+    cout << "\n=== SMART POINTER TEST ===" << endl;
+
+    int* smartAddr = nullptr;
+
+    {
+        auto smart = std::make_unique<int>(99);
+        smartAddr = smart.get();   // capture raw address
+
+        cout << "Inside scope - smart address: " << smartAddr << endl;
+        cout << "Inside scope - smart value:   " << *smart << endl;
+
+        // 🔴 BREAKPOINT 3: here, inspect memory at smartAddr → you'll see 99
+
+    }  // smart pointer destructor fires — heap AUTOMATICALLY freed!
+
+    // 🔴 BREAKPOINT 4: here, inspect memory at smartAddr → MEMORY FREED
+    cout << "After scope - smartAddr:     " << smartAddr << endl;
+    // cout << *smartAddr;  // ⚠ DANGEROUS — dangling pointer, undefined behavior
 
     return 0;
 }
