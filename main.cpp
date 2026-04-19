@@ -43,3 +43,25 @@ int main() {
 
     return 0;
 }
+
+
+
+/*
+
+
+
+The Hack to See the Leak
+Step by step:
+
+Set breakpoint INSIDE the { ... } scope
+Run, hit breakpoint
+Copy the address from Watch window (e.g., 0x000002763ef08aa0)
+Open Memory window, paste that address
+Note: value shows 2a 00 00 00 (42)
+Continue execution (F5)
+Set next breakpoint AFTER the closing }
+When hit → open Memory window, paste the SAME address
+RAW pointer: Still shows 2a 00 00 00 = LEAKED ☠
+SMART pointer: Shows dd dd dd dd or garbage = FREED ✓
+
+*/
