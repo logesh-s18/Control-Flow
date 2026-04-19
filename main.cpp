@@ -1,61 +1,34 @@
 #include <iostream>
+#include <string>
 using namespace std;
-
-
-
-void fizzbuzzpop(int value)
-{
-	
-	for (int i = 1; i <= value; ++i)
-	{
-		bool flag = false; //flag
-
-
-		//ordewising the conditions based on output to happen sequentially
-		if ( i % 3 == 0)
-		{
-			cout << "fizz";
-			flag = true;
-
-		}
-
-		if ( i % 5 == 0)
-		{
-			cout << "buzz";
-			flag = true;
-		}
-
-
-		if ( i % 7 == 0)
-		{
-			cout << "pop";
-			flag = true;
-		}
-
-		if (!flag)
-		{
-			cout << i;
-		}
-
-		cout << '\n'; //new line
-
-	}
-		
-}
-
 
 
 int main()
 {
-	cout << "please enter the number :";
+	int* hvalue = new int;
+
+	cout << "hvalue & " << &hvalue << endl;
+	cout << "hvalue dref " << *hvalue << endl;
+
+	auto hval = std::make_unique<int>(42);
+
+	delete hvalue;
+
+	cout << "after del hvalue is " << &hvalue;
+	cout << "after del hvalue dref is " << *hvalue;
 
 
-	int value;
 
-	cin >> value;
 
-	fizzbuzzpop(value);
+	//{
+	//	auto hval = std::make_unique<int>(42);
+	//	// set breakpoint here, inspect memory — see the 42
+	//	
+	//	
+	//	int* hvalue = new int;
+	//}
+	//cout << "after del hvalue dref";
 
-	return 0;
+
 
 }
