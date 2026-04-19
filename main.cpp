@@ -30,6 +30,9 @@ int main() {
         auto smart = std::make_unique<int>(99);
         smartAddr = smart.get();   // capture raw address
 
+
+        //auto smart2 = smart;
+
         cout << "Inside scope - smart address: " << smartAddr << endl;
         cout << "Inside scope - smart value:   " << *smart << endl;
 
@@ -63,5 +66,24 @@ Set next breakpoint AFTER the closing }
 When hit → open Memory window, paste the SAME address
 RAW pointer: Still shows 2a 00 00 00 = LEAKED ☠
 SMART pointer: Shows dd dd dd dd or garbage = FREED ✓
+
+
+
+----------------
+
+Question: "Why do you use auto with smart pointers?"
+Your answer:
+"Three reasons:
+First, smart pointer types are verbose. Writing std::unique_ptr<MyType, std::default_delete<MyType>> manually is error-prone and hard to read. auto lets the compiler deduce the exact type.
+Second, it reduces duplication. Without auto, I'd write the type twice: once on the left side of the assignment, and once inside make_unique<>. That's the DRY principle — Don't Repeat Yourself.
+Third, modern C++ guidelines (like the Core Guidelines by Stroustrup) explicitly recommend auto with factory functions like make_unique and make_shared. It's idiomatic C++.
+However, I avoid auto for primitive types like int or double where explicit types improve readability."
+
+
+One More Pattern — auto*
+cppauto* raw = new int(42);  // auto* makes it clear: this is a pointer
+// vs
+auto raw = new int(42);   // also works, but less obvious it's a pointer
+auto* makes the pointer nature explicit. Small readability win.
 
 */
