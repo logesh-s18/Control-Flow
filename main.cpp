@@ -10,7 +10,7 @@ int returnNum()
 
     while (true)
     {
-        std::cout << "Enter b for break or r for return : " << "\n";
+        std::cout << "Enter b for break or r for return : ";
 
         char value{};
 
@@ -21,7 +21,12 @@ int returnNum()
             return 1;
 
 
-        std::cout << "we broke and left \n";
+       
+        if (value == 'b')
+        {
+            std::cout << "we broke and left \n";
+            break;
+        }
 
     }
 
