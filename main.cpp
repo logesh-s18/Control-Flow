@@ -1,3 +1,4 @@
+#include <cstdint>
 #include <iostream>
 
 
@@ -34,13 +35,35 @@ int returnNum()
 }
 
 
+std::int64_t pow(int base, int exp)
+{
+    int64_t total{1};
+
+    for (int i = 0; i < exp; ++i)
+        total *= base;
+
+
+    return total;
+
+}
+
 
 
 int main()
 {
-    int returnValue{ returnNum()};
+   
+   
 
-    std::cout << "The action made is " << returnValue << '\n';
 
-    return 0;
+    int base = 2;
+    int exp = 10;
+
+    std::cout << "Finding the total value of base " << base << " and exp " << exp << " \n";
+
+    int totalValue = pow(base,exp);
+
+    std::cout << totalValue;
+
+
+    std::cout << "\n\n\n";
 }
