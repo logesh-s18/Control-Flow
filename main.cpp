@@ -47,13 +47,23 @@ void fizzbuzzpoo(int value)
 
 int main()
 {
-	std::cout << "enter a number : ";
+	//std::cout << "enter a number : ";
 
-	int value{};
+	//int value{};
 
-	std::cin >> value;
+	//std::cin >> value;
 
-	fizzbuzzpoo(value);
+	//fizzbuzzpoo(value);
+
+
+	int iterations = 0;
+	for (int x = 0; x < 10; ) {
+		for (int y = 0; y < 3; ++y) 
+		{
+			++x; //Loop variable hijacking - from outer loop
+		}
+		iterations++;
+	}
 
 
 
