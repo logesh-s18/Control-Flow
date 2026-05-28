@@ -45,26 +45,16 @@ void fizzbuzzpoo(int value)
 
 }
 
+
+bool justPrint() {
+
+	std::cout << "Running...\n";
+
+	return true;
+
+}
+
 int main()
 {
-	//std::cout << "enter a number : ";
-
-	//int value{};
-
-	//std::cin >> value;
-
-	//fizzbuzzpoo(value);
-
-
-	int iterations = 0;
-	for (int x = 0; x < 10; ) {
-		for (int y = 0; y < 3; ++y) 
-		{
-			++x; //Loop variable hijacking - from outer loop
-		}
-		iterations++;
-	}
-
-
-
+	for (;justPrint(););
 }
