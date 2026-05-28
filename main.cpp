@@ -65,15 +65,13 @@ int justPr() {
 int main()
 {
 	int count{ 0 }; // count how many times the loop iterates
-	bool keepLooping{ true }; // controls whether the loop ends or not
-	while (keepLooping)
+	while (true)
 	{
 		std::cout << "Enter 'e' to exit this loop or any other character to continue: ";
 		char ch{};
 		std::cin >> ch;
 
 		if (ch == 'e')
-			//keepLooping = false; 
 			break; //instead of above boolean flag to exit the loop, we use break
 		else
 		{
