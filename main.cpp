@@ -53,8 +53,33 @@ bool justPrint() {
 	return true;
 
 }
+int justPr() {
+
+	std::cout << "Running...\n";
+
+	return 1;
+
+}
+
 
 int main()
 {
-	for (;justPrint(););
+	int count{ 0 }; // count how many times the loop iterates
+	bool keepLooping{ true }; // controls whether the loop ends or not
+	while (keepLooping)
+	{
+		std::cout << "Enter 'e' to exit this loop or any other character to continue: ";
+		char ch{};
+		std::cin >> ch;
+
+		if (ch == 'e')
+			//keepLooping = false; 
+			break; //instead of above boolean flag to exit the loop, we use break
+		else
+		{
+			++count;
+			std::cout << "We've iterated " << count << " times\n";
+		}
+	}
+
 }
