@@ -1,38 +1,30 @@
 #include <iostream>
-#include <random> // Random numbers generate panna thevayaana library
 
-int main() {
+// For illustrative purposes only, don't use this
+unsigned int LCG16() // our PRNG
+{
+    static unsigned int s_state{ 0 }; // only initialized the first time this function is called
 
-    std::cout << "=== Scenario 1: Fixed Seed (Predictable) ===\n";
+    // Generate the next number
 
-    // 1. Oru fixed aana number ah seed ah set pandrom
-    unsigned int my_seed = 12345;
+    // We modify the state using large constants and intentional overflow to make it hard
+    // for someone to casually determine what the next number in the sequence will be.
 
-    // 2. SEEDING HAPPENS HERE! <-- Idhu dhaan mukkiyam
-    // 'prng1' nu oru Mersenne Twister engine create pandrom. 
-    // Bracket kulla namma seed ah kudukkurom.
-    std::mt19937 prng1(my_seed);
+    s_state = 8253729 * s_state + 2396403; // first we modify the state
+    return s_state % 32768; // then we use the new state to generate the next number in the sequence
+}
 
-    // 3. Numbers generate pandrom
-    std::cout << "Fixed Seed result 1: " << prng1() << '\n';
-    std::cout << "Fixed Seed result 2: " << prng1() << '\n';
-    std::cout << "(Indha program ah evalo thadava run pannalum mela irukka rendu numbers maaradhu!)\n\n";
+int main()
+{
+    // Print 100 random numbers
+    for (int count{ 1 }; count <= 100; ++count)
+    {
+        std::cout << LCG16() << '\t';
 
-
-    std::cout << "=== Scenario 2: Dynamic Seed (Unpredictable) ===\n";
-
-    // 1. Hardware/OS kitta irundhu oru unmaiyaana random number vanga 'random_device' use pandrom
-    std::random_device rd;
-    unsigned int dynamic_seed = rd(); // Ippo OS oru pudhu seed kudukkum
-
-    // 2. SEEDING HAPPENS HERE! <-- 
-    // Ippo andha pudhu seed ah innoru engine-ku kudukkurom
-    std::mt19937 prng2(dynamic_seed);
-
-    // 3. Numbers generate pandrom
-    std::cout << "Dynamic Seed result 1: " << prng2() << '\n';
-    std::cout << "Dynamic Seed result 2: " << prng2() << '\n';
-    std::cout << "(Indha program ah ovvoru thadava run pannumbodhum indha numbers maaritey irukkum!)\n";
+        // If we've printed 10 numbers, start a new row
+        if (count % 10 == 0)
+            std::cout << '\n';
+    }
 
     return 0;
 }
