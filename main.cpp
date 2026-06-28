@@ -1,83 +1,38 @@
-#include <cstdint>
 #include <iostream>
+#include <random> // Random numbers generate panna thevayaana library
+
+int main() {
+
+    std::cout << "=== Scenario 1: Fixed Seed (Predictable) ===\n";
+
+    // 1. Oru fixed aana number ah seed ah set pandrom
+    unsigned int my_seed = 12345;
+
+    // 2. SEEDING HAPPENS HERE! <-- Idhu dhaan mukkiyam
+    // 'prng1' nu oru Mersenne Twister engine create pandrom. 
+    // Bracket kulla namma seed ah kudukkurom.
+    std::mt19937 prng1(my_seed);
+
+    // 3. Numbers generate pandrom
+    std::cout << "Fixed Seed result 1: " << prng1() << '\n';
+    std::cout << "Fixed Seed result 2: " << prng1() << '\n';
+    std::cout << "(Indha program ah evalo thadava run pannalum mela irukka rendu numbers maaradhu!)\n\n";
 
 
-void fizzbuzzpoo(int value)
-{
+    std::cout << "=== Scenario 2: Dynamic Seed (Unpredictable) ===\n";
 
-	
+    // 1. Hardware/OS kitta irundhu oru unmaiyaana random number vanga 'random_device' use pandrom
+    std::random_device rd;
+    unsigned int dynamic_seed = rd(); // Ippo OS oru pudhu seed kudukkum
 
-	for (int i = 1; i <= value; ++i)
-	{
-		bool printed = false;
+    // 2. SEEDING HAPPENS HERE! <-- 
+    // Ippo andha pudhu seed ah innoru engine-ku kudukkurom
+    std::mt19937 prng2(dynamic_seed);
 
-		if (i%3==0)
-		{
-			std::cout << "fizz";
-			printed = true;
-		}
+    // 3. Numbers generate pandrom
+    std::cout << "Dynamic Seed result 1: " << prng2() << '\n';
+    std::cout << "Dynamic Seed result 2: " << prng2() << '\n';
+    std::cout << "(Indha program ah ovvoru thadava run pannumbodhum indha numbers maaritey irukkum!)\n";
 
-		if (i % 5 == 0)
-		{
-			std::cout << "buzz";
-			printed = true;
-		}
-
-		if (i % 7 == 0)
-		{
-			std::cout << "pop";
-			printed = true;
-		}
-
-		
-
-		if (!printed) 
-		{
-			std::cout << i;
-		}
-
-		std::cout << '\n';
-		
-
-	}
-
-
-
-}
-
-
-bool justPrint() {
-
-	std::cout << "Running...\n";
-
-	return true;
-
-}
-int justPr() {
-
-	std::cout << "Running...\n";
-
-	return 1;
-
-}
-
-
-int main()
-{
-	int count{ 0 }; // count how many times the loop iterates
-	while (true)
-	{
-		std::cout << "Enter 'e' to exit this loop or any other character to continue: ";
-		char ch{};
-		std::cin >> ch;
-
-		if (ch == 'e')
-			break; //instead of above boolean flag to exit the loop, we use break
-		else
-		{
-			++count;
-			std::cout << "We've iterated " << count << " times\n";
-		}
-	}
-
+    return 0;
 }
