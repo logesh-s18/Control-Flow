@@ -10,7 +10,7 @@ unsigned int LCG16() // our PRNG
     // We modify the state using large constants and intentional overflow to make it hard
     // for someone to casually determine what the next number in the sequence will be.
 
-    s_state = 8253729 * s_state + 2396403; // first we modify the state
+    s_state = 8253731 * s_state + 2396403; // first we modify the state - > any number change, but easily predictable on output (comes like odd even odd even)
     return s_state % 32768; // then we use the new state to generate the next number in the sequence
 }
 
