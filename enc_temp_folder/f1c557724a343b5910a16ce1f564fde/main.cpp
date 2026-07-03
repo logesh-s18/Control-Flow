@@ -14,7 +14,7 @@ unsigned int LCG16() // our PRNG
     return s_state % 32768; // then we use the new state to generate the next number in the sequence
 }
 
-int main()  
+int main()
 {
     // Print 100 random numbers
     for (int count{ 1 }; count <= 100; ++count)
