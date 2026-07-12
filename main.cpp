@@ -23,14 +23,21 @@ unsigned int LCG16()
 void print10()
 {
 
-	for (int i = 1; i <= 10; ++i)
+	for (int i = 1; i <= 3; ++i) // this loop for how many rows i want to generate 10 PRNGs
 	{
 
-		cout << LCG16() << "\t";
+		cout << i << " row running----\n";
+
+		for (int j = 1; j <= 10; ++j) // generate 10 PRNGs
+		{
+
+			cout << LCG16() << "\t";
+
+		}
+
+		cout << '\n';
 
 	}
-
-	cout << '\n';
 
 
 }
