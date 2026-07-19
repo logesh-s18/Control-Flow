@@ -6,7 +6,7 @@ constexpr int getMonoLayout() {
     return 1;
 }
 
- int getValue()
+ constexpr int getValue()
 {
     return 2;
 }
