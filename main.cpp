@@ -1,64 +1,43 @@
-#include<iostream>
+#include <iostream>
 
+// 1. We mark these functions as 'constexpr'
+// They return regular integers, but the compiler computes them at compile time.
+constexpr int getMonoLayout() {
+    return 1;
+}
 
-
-void fizbuzbump(int value)
+ int getValue()
 {
+    return 2;
+}
 
+constexpr int getStereoLayout() {
+    return getValue();
+}
 
-	for (int i = 1; i <= value; ++i)
-	{
+void setupAudioWorkspace(int channels) {
+    switch (channels)
+    {
+        // 2. We can call the constexpr functions directly as case labels!
+    case getMonoLayout():
+        std::cout << "Setting up 1 mono microphone track.\n";
+        break;
 
-		bool printed = false;
+    case getStereoLayout():
+        std::cout << "Setting up left and right stereo tracks.\n";
+        break;
 
-
-		if ((i % 3) == 0)
-		{
-			std::cout << "fiz";
-			printed = true;
-
-		}
-
-		if ((i % 5) == 0)
-		{
-			std::cout << "buz";
-			printed = true;
-
-		}
-
-		if ((i % 7) == 0)
-		{
-			std::cout << "bump";
-			printed = true;
-
-		}
-
-		if (!printed)
-		{
-			std::cout << value;
-		}
-
-		std::cout << "\n";
-
-
-	}
-
-
+    default:
+        std::cout << "Unsupported channel layout.\n";
+        break;
+    }
 }
 
 
-int main()
-{
 
-	int value{};
+int main() {
 
-	std::cout << "Enter the Value : ";
-
-	std::cin >> value;
-
-	fizbuzbump(value);
-
-
-
-	return 0;
+    int value(getValue());
+    setupAudioWorkspace(value); // Passes 2, matching the stereo case
+    return 0;
 }
