@@ -10,7 +10,7 @@ Control Flow
 
 - always use blocks in for condition statment control flow body, bcz, if/else without block/braces only include very next single statement.
 - using { } will make include all required statements, better for readability.
-- dont accidently put ';' beside conditions, it will assume as null statement and will always execute next line.
+- dont accidently put ';' beside condition's statement, it will assume as null statement and will always execute next line.
 
 
 - Implicit Blocks
