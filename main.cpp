@@ -33,25 +33,36 @@ void printBallHeight(double currentBallHeight, int sec)
 	
 
 	// -ve resembles how deep inside into ground the ball went. we dont need that, just say its in ground
-	if (currentBallHeight < 0)
-	{
+	if (currentBallHeight > 0)
+		std::cout << "At " << sec << " second/s, the ball is at height: " << currentBallHeight << " meters \n";
+	else
 		std::cout << "At " << sec << " second/s, the ball is on Ground \n";
-		return;
-	}
 
-	std::cout << "At " << sec << " second/s, the ball is at height : " << currentBallHeight << " meter/s \n" ;
 
 }
 
 
-void calcAndPrint(double TwrHeight, int sec)
+
+
+double getCurrentBallHeight(double TwrHeight, int sec)
 {
-
-
 	//formula: distance fallen = gravity_constant * x_seconds2 / 2
 	double distanceFallen = (Constant::gravity * (sec * sec)) / 2.0;
 
 	double currentBallHeight = TwrHeight - distanceFallen;
+
+	if (currentBallHeight < 0.0)
+		return 0.0;
+
+	return currentBallHeight;
+
+}
+
+void calcAndPrint(double TwrHeight, int sec)
+{
+
+	// we need to collect current ball height after every secs it falls down, to find balance distance it needs to reach ground
+	double currentBallHeight{getCurrentBallHeight(TwrHeight, sec)};
 
 	printBallHeight(currentBallHeight, sec);
 
