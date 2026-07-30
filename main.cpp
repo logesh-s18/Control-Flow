@@ -1,43 +1,74 @@
 #include <iostream>
 
-// 1. We mark these functions as 'constexpr'
-// They return regular integers, but the compiler computes them at compile time.
-constexpr int getMonoLayout() {
-    return 1;
-}
+/*
 
- constexpr int getValue()
+formula: distance fallen = gravity_constant * x_seconds2 / 2
+
+REAL PHYSICS FORMULA = distance = (initial_velocity * time) + (gravity * time * time / 2.0)
+*/
+
+
+
+namespace Constant
 {
-    return 2;
-}
-
-constexpr int getStereoLayout() {
-    return getValue();
-}
-
-void setupAudioWorkspace(int channels) {
-    switch (channels)
-    {
-        // 2. We can call the constexpr functions directly as case labels!
-    case getMonoLayout():
-        std::cout << "Setting up 1 mono microphone track.\n";
-        break;
-
-    case getStereoLayout():
-        std::cout << "Setting up left and right stereo tracks.\n";
-        break;
-
-    default:
-        std::cout << "Unsupported channel layout.\n";
-        break;
-    }
+	const double gravity = 9.8;
 }
 
 
+double getHeightOfTwr()
+{
+	std::cout << "Enter the height of the tower in meters: ";
 
-int main() {
+	double value{};
 
-    int value(getValue());
-    setupAudioWorkspace(value); // Passes 2, matching the stereo case
-    return 0;
+	std::cin >> value;
+
+	return value;
+
+}
+
+
+void printBallHeight(double currentBallHeight, int sec)
+{
+	
+
+	// -ve resembles how deep inside into ground the ball went. we dont need that, just say its in ground
+	if (currentBallHeight < 0)
+	{
+		std::cout << "At " << sec << " second/s, the ball is on Ground \n";
+		return;
+	}
+
+	std::cout << "At " << sec << " second/s, the ball is at height : " << currentBallHeight << " meter/s \n" ;
+
+}
+
+
+void calcAndPrint(double TwrHeight, int sec)
+{
+
+
+	//formula: distance fallen = gravity_constant * x_seconds2 / 2
+	double distanceFallen = (Constant::gravity * (sec * sec)) / 2.0;
+
+	double currentBallHeight = TwrHeight - distanceFallen;
+
+	printBallHeight(currentBallHeight, sec);
+
+}
+
+int main()
+{
+	//get the height from user
+	double heightOfTwr{ getHeightOfTwr() };
+
+	calcAndPrint(heightOfTwr, 0);
+	calcAndPrint(heightOfTwr, 1);
+	calcAndPrint(heightOfTwr, 2);
+	calcAndPrint(heightOfTwr, 3);
+	calcAndPrint(heightOfTwr, 4);
+	calcAndPrint(heightOfTwr, 5);
+
+	return 0;
+
 }
