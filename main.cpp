@@ -41,17 +41,17 @@ void printBallHeight(double currentBallHeight, int sec)
 
 
 
-double getCurrentBallHeight(double TwrHeight, int seconds)
+double getCurrentBallHeight(double twrHeight, int seconds)
 {
 
 
-		//formula: distance fallen = gravity_constant * x_seconds2 / 2
-		double distanceFallen = (Constant::gravity * (seconds * seconds)) / 2.0;
+	//formula: distance fallen = gravity_constant * x_seconds2 / 2
+	double distanceFallen = (Constant::gravity * (seconds * seconds)) / 2.0;
 
-		double currentBallHeight = TwrHeight - distanceFallen;
+	double currentBallHeight = twrHeight - distanceFallen;
 
-		if (currentBallHeight < 0.0)
-			return 0.0;
+	if (currentBallHeight < 0.0)
+		return 0.0;
 
 	//if not ground, no above return
 	return currentBallHeight;
@@ -60,11 +60,11 @@ double getCurrentBallHeight(double TwrHeight, int seconds)
 
 
 
-double calcAndPrint(double TwrHeight, int sec)
+double calcAndPrint(double twrHeight, int sec)
 {
 
 	// we need to collect current ball height after every secs it falls down, to find balance distance it needs to reach ground
-	double currentBallHeight{getCurrentBallHeight(TwrHeight, sec)};
+	double currentBallHeight{ getCurrentBallHeight(twrHeight, sec) };
 
 	// final output print msg
 	printBallHeight(currentBallHeight, sec);
@@ -78,16 +78,16 @@ double calcAndPrint(double TwrHeight, int sec)
 int main()
 {
 	//get the height from user
-	double heightOfTwr{ getHeightOfTwr() };
+	double twrHeight{ getHeightOfTwr() };
 
-	double currentHeightofTwr{heightOfTwr};
+	double currentHeightOfTwr{ twrHeight };
 
 
 	// condition = if current height returned from loop is still not 0, then inc the secs, 
 	// if the current height is 0, then stop the loop
-	for (int sec = 0; currentHeightofTwr > 0; ++sec)
+	for (int sec = 0; currentHeightOfTwr > 0; ++sec)
 	{
-		currentHeightofTwr = calcAndPrint(heightOfTwr, sec);
+		currentHeightOfTwr = calcAndPrint(twrHeight, sec);
 	}
 
 	return 0;
