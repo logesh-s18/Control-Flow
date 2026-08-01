@@ -11,7 +11,7 @@ REAL PHYSICS FORMULA = distance = (initial_velocity * time) + (gravity * time * 
 
 namespace Constant
 {
-	const double gravity = 9.8;
+	constexpr double gravity = 9.8;
 }
 
 
