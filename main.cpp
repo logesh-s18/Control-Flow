@@ -60,7 +60,7 @@ double getCurrentBallHeight(double twrHeight, int seconds)
 
 
 
-double calcAndPrint(double twrHeight, int sec)
+double calcAndPrintBallHeight(double twrHeight, int sec)
 {
 
 	// we need to collect current ball height after every secs it falls down, to find balance distance it needs to reach ground
@@ -78,16 +78,30 @@ double calcAndPrint(double twrHeight, int sec)
 int main()
 {
 	//get the height from user
-	double twrHeight{ getHeightOfTwr() };
-
-	double currentHeightOfTwr{ twrHeight };
+	const double twrHeight{ getHeightOfTwr() };
 
 
+	// my approach : for loop
+	
 	// condition = if current height returned from loop is still not 0, then inc the secs, 
 	// if the current height is 0, then stop the loop
-	for (int sec = 0; currentHeightOfTwr > 0; ++sec)
+	//for (int sec = 0; currentHeightOfTwr > 0; ++sec)
+	//{
+	//	currentHeightOfTwr = calcAndPrintBallHeight(twrHeight, sec);
+	//}
+
+
+
+
+	// official approach : while loop
+
+	int seconds{0};
+
+	// directtly use the function in condition which returns currentBallHeight, with that we can 
+	// do the condition check if its still in air or not. 
+	while ((calcAndPrintBallHeight(twrHeight, seconds) > 0.0))
 	{
-		currentHeightOfTwr = calcAndPrint(twrHeight, sec);
+		++seconds;
 	}
 
 	return 0;
