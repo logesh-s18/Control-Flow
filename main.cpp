@@ -1,62 +1,77 @@
-// Make sure that assert triggers even if we compile in release mode
-#define NDEBUG
-
-#undef NDEBUG
-#include <cassert> // for assert
 #include <iostream>
 
-bool isPrime(int x)
+
+
+namespace constants
+{
+	constexpr double gravity = 9.8;
+}
+
+
+double getTwrHeight()
+{
+	std::cout << "Enter the height (meters) : ";
+
+	double twrHeight{};
+
+	std::cin >> twrHeight;
+
+	return twrHeight;
+}
+
+
+double getCurrentBallHeight(double twrHeight, int seconds)
 {
 
-	//as per the Prime logic, 0 & 1 are not in scope for Prime, since 0 will be undefined and 1 will be always divisible. 1 is considered to be unit number
+	double fallenDistance = (constants::gravity * (seconds * seconds)) / 2;
 
-	/*--- Perfect Guard Clause ---*/
-	if (x <= 1)
-		return false;
+	double currentBallHeight = twrHeight - fallenDistance;
 
+	if (currentBallHeight < 0.0)
+		return 0.0;
 
-	// this loop is to check if numbers in - between 2 to 'x' got divisible
-	// which prooves there will be another number which can divide the x than itself 
-	
-	/*---- Flawless Imposter Catching  ----*/
-	for (int i = 2; i < x; ++i)
-	{
-
-		if ((x % i) == 0)
-		{
-			return false;
-		}
-	}
-
-	//there is no divisible number gets true (i<x), then the next inc would be the number itself which is divisible, so we make it fals 
-	// and skip loop, and return 'true' if no in-between nums found. its a PRIME
-
-	/*--- 3. The Survivor ---*/
-	return true;
+	return currentBallHeight;
 
 }
 
+
+void printBallHeight(double currentBallHeight, int seconds)
+{
+
+	if (currentBallHeight > 0.0)
+		std::cout << "At " << seconds << " seconds, the Ball is " << currentBallHeight << " meters away to reach Ground \n";
+	else
+		std::cout << "At " << seconds << " seconds, the Ball is on ground \n";
+
+
+}
+
+double calcAndPrintBallHeight(double twrHeight, int seconds)
+{
+
+	double currentBallHeight{getCurrentBallHeight(twrHeight, seconds)};
+
+	printBallHeight(currentBallHeight, seconds);
+
+
+
+	return currentBallHeight;
+}
+
+
 int main()
 {
-	assert(!isPrime(0)); 
-	assert(!isPrime(1));
-	assert(isPrime(2)); 
-	assert(isPrime(3));
-	assert(!isPrime(4));
-	assert(isPrime(5));
-	assert(isPrime(7));
-	assert(!isPrime(9));
-	assert(isPrime(11));
-	assert(isPrime(13));
-	assert(!isPrime(15));
-	assert(!isPrime(16));
-	assert(isPrime(17));
-	assert(isPrime(19));
-	assert(isPrime(97));
-	assert(!isPrime(99));
-	assert(isPrime(13417));
 
-	std::cout << "Success!\n";
+	double twrHeight{getTwrHeight()};
 
-	return 0;
+	int seconds{0};
+
+
+	while (calcAndPrintBallHeight(twrHeight, seconds) > 0.0)
+	{
+		++seconds;
+	}
+
+
+
 }
