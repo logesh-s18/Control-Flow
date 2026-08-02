@@ -673,8 +673,12 @@ Rule: goto only cares about the Pointer Variable (the address), not the Heap Mem
 		Jumping over new is allowed only if the pointer variable itself is in a different/bypassed scope.
 
 
+# Useful TIPS ------------------
 
+BLOCK SCOPE BENEFITS :
 
+* using block scope for big size storages like arrays could actually be useful
+	it can reuse the alotted space again for another array if previous array got  used and cleaned
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------

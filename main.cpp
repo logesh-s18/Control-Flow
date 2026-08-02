@@ -1,109 +1,53 @@
 #include <iostream>
 
-/*
-
-formula: distance fallen = gravity_constant * x_seconds2 / 2
-
-REAL PHYSICS FORMULA = distance = (initial_velocity * time) + (gravity * time * time / 2.0)
-*/
-
-
-
-namespace Constant
+// Simulates a very fast function
+void fastFunction()
 {
-	constexpr double gravity = 9.8;
+    volatile long long sum{};
+
+    for (int i = 0; i < 5'000'000; ++i)
+    {
+        sum += i;
+    }
 }
 
-
-
-double getHeightOfTwr()
+// Simulates a medium-speed function
+void mediumFunction()
 {
-	std::cout << "Enter the height of the tower in meters: ";
+    volatile long long sum{};
 
-	double value{};
-
-	std::cin >> value;
-
-	return value;
-
+    for (int i = 0; i < 50'000'000; ++i)
+    {
+        sum += i;
+    }
 }
 
-
-void printBallHeight(double currentBallHeight, int sec)
+// Simulates a slow function
+void slowFunction()
 {
-	// -ve resembles how deep inside into ground the ball went. we dont need that, just say its in ground
-	if (currentBallHeight > 0)
-		std::cout << "At " << sec << " seconds, the ball is at height: " << currentBallHeight << " meters \n";
-	else // if currentBallHeight goes negative 
-		std::cout << "At " << sec << " seconds, the ball is on Ground \n";
+    volatile long long sum{};
+
+    for (int i = 0; i < 200'000'000; ++i)
+    {
+        sum += i;
+    }
 }
 
-
-
-
-double getCurrentBallHeight(double twrHeight, int seconds)
+// Calls all three
+void processData()
 {
-
-
-	//formula: distance fallen = gravity_constant * x_seconds2 / 2
-	double distanceFallen = (Constant::gravity * (seconds * seconds)) / 2.0;
-
-	double currentBallHeight = twrHeight - distanceFallen;
-
-	if (currentBallHeight < 0.0)
-		return 0.0;
-
-	//if not ground, no above return
-	return currentBallHeight;
-
+    fastFunction();
+    mediumFunction();
+    slowFunction();
 }
-
-
-
-double calcAndPrintBallHeight(double twrHeight, int sec)
-{
-
-	// we need to collect current ball height after every secs it falls down, to find balance distance it needs to reach ground
-	double currentBallHeight{ getCurrentBallHeight(twrHeight, sec) };
-
-	// final output print msg
-	printBallHeight(currentBallHeight, sec);
-
-	//After priting msg, return the current height to loop
-	return currentBallHeight;
-
-}
-
 
 int main()
 {
-	//get the height from user
-	const double twrHeight{ getHeightOfTwr() };
+    std::cout << "Program Started\n\n";
 
+    processData();
 
-	// my approach : for loop
-	
-	// condition = if current height returned from loop is still not 0, then inc the secs, 
-	// if the current height is 0, then stop the loop
-	//for (int sec = 0; currentHeightOfTwr > 0; ++sec)
-	//{
-	//	currentHeightOfTwr = calcAndPrintBallHeight(twrHeight, sec);
-	//}
+    std::cout << "\nProgram Finished\n";
 
-
-
-
-	// official approach : while loop
-
-	int seconds{0};
-
-	// directtly use the function in condition which returns currentBallHeight, with that we can 
-	// do the condition check if its still in air or not. 
-	while ((calcAndPrintBallHeight(twrHeight, seconds) > 0.0))
-	{
-		++seconds;
-	}
-
-	return 0;
-
+    return 0;
 }
