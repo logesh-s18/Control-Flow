@@ -1,6 +1,7 @@
 #include <iostream>
 
 // Simulates a very fast function
+// Worker function (leaf function)
 void fastFunction()
 {
     volatile long long sum{};
@@ -12,6 +13,7 @@ void fastFunction()
 }
 
 // Simulates a medium-speed function
+// Worker function (leaf function)
 void mediumFunction()
 {
     volatile long long sum{};
@@ -23,6 +25,7 @@ void mediumFunction()
 }
 
 // Simulates a slow function
+// Worker function (leaf function)
 void slowFunction()
 {
     volatile long long sum{};
@@ -34,18 +37,23 @@ void slowFunction()
 }
 
 // Calls all three
+// Orchestrator Function (Caller)
+// Delegates work to helper/worker functions.
 void processData()
 {
-    fastFunction();
-    mediumFunction();
-    slowFunction();
+    fastFunction();     // child; leaf function
+    mediumFunction();   // child; leaf function
+    slowFunction();     // child; leaf function
 }
 
-int main()
+
+
+
+int main() // program entry point; caller; parent function
 {
     std::cout << "Program Started\n\n";
 
-    processData();
+    processData(); //caller; orchestrator;
 
     std::cout << "\nProgram Finished\n";
 
