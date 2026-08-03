@@ -1,77 +1,49 @@
 #include <iostream>
+#include <cassert>
 
 
-
-namespace constants
-{
-	constexpr double gravity = 9.8;
-}
-
-
-double getTwrHeight()
-{
-	std::cout << "Enter the height (meters) : ";
-
-	double twrHeight{};
-
-	std::cin >> twrHeight;
-
-	return twrHeight;
-}
-
-
-double getCurrentBallHeight(double twrHeight, int seconds)
+bool isPrime(int dividend)
 {
 
-	double fallenDistance = (constants::gravity * (seconds * seconds)) / 2;
 
-	double currentBallHeight = twrHeight - fallenDistance;
+	if (dividend <=1)
+		return false; //Not a PRIME
 
-	if (currentBallHeight < 0.0)
-		return 0.0;
+	for (int divisor = 2; divisor < dividend; ++divisor)
+	{
 
-	return currentBallHeight;
+		if ((dividend % divisor) == 0)
+			return false; //Not a PRIME
+	}
 
-}
-
-
-void printBallHeight(double currentBallHeight, int seconds)
-{
-
-	if (currentBallHeight > 0.0)
-		std::cout << "At " << seconds << " seconds, the Ball is " << currentBallHeight << " meters away to reach Ground \n";
-	else
-		std::cout << "At " << seconds << " seconds, the Ball is on ground \n";
-
-
-}
-
-double calcAndPrintBallHeight(double twrHeight, int seconds)
-{
-
-	double currentBallHeight{getCurrentBallHeight(twrHeight, seconds)};
-
-	printBallHeight(currentBallHeight, seconds);
+	return true; // its a PRIME - after all that way, if divisor in for loop cant be divided, then dividend by itself can be divided.
 
 
 
-	return currentBallHeight;
+	
 }
 
 
 int main()
 {
 
-	double twrHeight{getTwrHeight()};
+	assert(isPrime(2));
+	assert(isPrime(3));
+	assert(!isPrime(4));
+	assert(isPrime(43));
+	assert(isPrime(67));
+	assert(isPrime(97));
+	assert(!isPrime(24));
+	assert(!isPrime(22));
+	assert(!isPrime(77));
+	assert(!isPrime(99));
+	assert(!isPrime(57));
+	assert(isPrime(83));
 
-	int seconds{0};
+	std::cout << "success !!!\n";
 
 
-	while (calcAndPrintBallHeight(twrHeight, seconds) > 0.0)
-	{
-		++seconds;
-	}
 
-
+	return 0;
 
 }
